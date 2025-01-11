@@ -120,146 +120,80 @@
       </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section h-screen flex items-center justify-center relative pt-24 bg-cover bg-center w-full" style="background-image: url('hero.jpg'); background-size: cover; background-repeat: no-repeat;">
-      <div class="absolute inset-0 bg-black/50"></div>
-      <div class="container mx-auto px-4 text-center space-y-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
-      <h1 class="font-['League_Spartan'] text-4xl md:text-7xl font-bold text-white tracking-wider drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] transform hover:scale-105" style="font-family: 'League Spartan', sans-serif;">
-      Graphic Voices <br> of Gender
-      </h1>
-      <p class="text-base md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto px-4" data-aos="fade-up" data-aos-delay="200">
-      Where Creativity Meets Advocacy: Exploring Design's Role in Gender Equality.
-      </p>
-      <a href="blog.html" class="inline-block px-6 py-3 bg-[#010245] hover:bg-[#3289C4] text-white font-bold rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 mx-4" data-aos="fade-up" data-aos-delay="400">
-      View Blog
-      </a>
+    <!-- About Section -->
+    <section class="min-h-screen bg-[#010245] text-white py-20 relative overflow-hidden">
+      <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+        <!-- Image Container -->
+        <div class="lg:w-1/2 relative">
+          <div class="rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-500 shadow-2xl">
+            <img src="profile.jpg" alt="James Hamuzah" class="w-full h-auto object-cover animate-fadeIn">
+            <div class="absolute inset-0 bg-[#3289C4]/20 hover:bg-transparent transition-all duration-300"></div>
+          </div>
+        </div>
+    
+        <!-- Text Content -->
+        <div class="lg:w-1/2 space-y-6 animate-slideInRight">
+          <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-[#3289C4] bg-clip-text text-transparent">
+            James Hamuzah
+          </h1>
+          <h2 class="text-xl text-[#3289C4] font-semibold">Gender Activist & Educator</h2>
+          
+          <div class="space-y-4 text-lg leading-relaxed">
+            <p class="animate-fadeIn">
+              James Hamuzah is a passionate gender activist and a versatile professional dedicated to promoting equity and inclusivity. He holds a Bachelor's Degree from the University of Malawi, where his academic journey laid the foundation for his advocacy work.
+            </p>
+            
+            <p class="animate-fadeIn delay-100">
+              As a tutor in the Department of Sociology, James has shared his expertise in key areas such as social theories and gender studies, inspiring many students to engage critically with societal issues. Alongside his academic pursuits, he is an accomplished graphic designer who merges creativity with advocacy, using visual storytelling to challenge stereotypes and amplify voices for social change.
+            </p>
+            
+            <p class="animate-fadeIn delay-200">
+              With a unique blend of skills in education, activism, and design, James continues to be a driving force for transformative conversations in his community and beyond.
+            </p>
+          </div>
+    
+          <!-- Animated Button -->
+          <button class="mt-8 bg-[#3289C4] hover:bg-[#2778b3] px-8 py-3 rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#3289C4]/50 animate-pulse">
+            Download CV
+          </button>
+        </div>
       </div>
-
-      <style>
-        @keyframes float {
-          0% { transform: translate(0, 0) rotate(0deg); }
-          50% { transform: translate(10px, -10px) rotate(5deg); }
-          100% { transform: translate(0, 0) rotate(0deg); }
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-          font-size: 2rem;
-          opacity: 0.3;
-        }
-        .equality-icons i:nth-child(2n) {
-          animation-delay: 2s;
-        }
-        .equality-icons i:nth-child(3n) {
-          animation-delay: 4s;
-        }
-      </style>
-
-      <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
-      
-      <!-- Original JavaScript remains unchanged -->
-      <script>
-        var TxtType = function(el, toRotate, period) {
-          // ... (keep existing typing animation code)
-        };
-        // ... (keep rest of the original script)
-      </script>
+    
+      <!-- Decorative Elements -->
+      <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-[#3289C4]/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-20 -right-20 w-60 h-60 bg-[#3289C4]/10 rounded-full blur-3xl"></div>
     </section>
-    <!-- Posts Section -->
-    <section id="posts" class="py-16 bg-gradient-to-r from-[#010245] to-[#3289C4]">
-      <div class="container mx-auto text-center px-4">
-      <h2 class="text-4xl font-bold mb-8 text-white" data-aos="fade-up">Latest Posts</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <!-- Post -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-        <div class="overflow-hidden">
-          <img src="post1.jpg" alt="Post 1" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
-        </div>
-        <div class="p-4">
-          <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Graphic Desin Career</span>
-          <a href="blog.html"><h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">From Bias to Balance: Gender in Graphic Design Career</h3></a>
-          <p class="text-gray-700 mt-2">Graphic design in Malawi has traditionally been a male-dominated field, like many other professions. The 2024 Maso Awards, a popular annual event in Malawi, highlighted this trend, with </p>
-          <div class="mt-4 text-sm text-gray-600">
-          <span>By James Hamuzah</span>
-          <span class="mx-2">•</span>
-          <span class="post-date"><script>document.write(new Date().toLocaleDateString())</script></span>
-          </div>
-          <a href="blog.html" class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read More</a>
-        </div>
-        </div>
-        <!-- Post -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-        <div class="overflow-hidden">
-          <img src="post2.jpg" alt="Post 2" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
-        </div>
-        <div class="p-4">
-          <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Gender Equality</span>
-          <a href="blog2.html"><h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">Creating gender-inclusive designs</h3></a>
-          <p class="text-gray-700 mt-2">Creating gender-inclusive designs isn't as hard as it might seem. It's all about being mindful and intentional. Let me share .</p>
-          <div class="mt-4 text-sm text-gray-600">
-          <span>By James Hamuzah</span>
-          <span class="mx-2">•</span>
-          <span class="post-date"><script>document.write(new Date().toLocaleDateString())</script></span>
-          </div>
-          <a href="blog2.html" class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read More</a>
-        </div>
-        </div>
-        <!-- Post -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="300">
-        <div class="overflow-hidden">
-          <img src="post3.jpg" alt="Post 3" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
-        </div>
-        <div class="p-4">
-          <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Newspapers</span>
-          <a href="blog3.html"><h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">Through the Lens: Unveiling Gender Bias in Newspaper Photos</h3></a>
-          <p class="text-gray-700 mt-2">Newspaper photos often reflect gender bias, subtly shaping how we perceive men and women. Men are frequently portrayed </p>
-          <div class="mt-4 text-sm text-gray-600">
-          <span>By James Hamuzah</span>
-          <span class="mx-2">•</span>
-          <span class="post-date"><script>document.write(new Date().toLocaleDateString())</script></span>
-          </div>
-          <a href="blog3.html" class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read More</a>
-        </div>
-        </div>
-            </div>
-            </div>
-          </section>
-  <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-cover bg-center bg-fixed" style="background-image: url('get_in_touch.jpg');">
-    <div class="bg-[#010245] bg-opacity-90 py-16 backdrop-blur-sm">
-      <div class="container mx-auto text-center text-white px-4">
-        <h2 class="text-4xl md:text-4xl text-3xl font-bold mb-8 text-[#3289C4]" data-aos="fade-up">Get in Touch</h2>
-        <p class="text-base md:text-lg mb-8 max-w-2xl mx-auto px-4" data-aos="fade-up" data-aos-delay="100">I'd love to hear from you! Whether you have a project idea, a collaboration opportunity, or just want to discuss design and gender advocacy, let's connect.</p>
-        <div class="max-w-lg mx-auto px-4" data-aos="fade-up" data-aos-delay="200">
-          <a href="mailto:james@graphicvoicesofgender.blog" class="block w-full md:w-auto px-6 py-3 bg-[#3289C4] text-white rounded-lg transition-all duration-300 hover:bg-[#010245] hover:scale-105 hover:-translate-y-1 text-sm md:text-base break-all md:break-normal">Email Me: james@graphicvoicesofgender.blog</a>
-        </div>
-      </div>
-    </div>
-<!-- Sliding Pop-up Message -->
-<div id="popup-message" class="fixed bottom-0 right-0 transform translate-x-full transition-transform duration-500 z-50">
-  <div class="bg-white p-8 m-4 rounded-lg shadow-xl max-w-md">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-[#3289C4] mb-4">Let's Connect!</h3>
-      <p class="text-gray-700 mb-6">I'd love to hear from you! Whether you have a project idea, a collaboration opportunity, or just want to discuss design and gender advocacy, let's connect.</p>
-      <a href="https://wa.me/+265990705194" class="block mb-4 px-6 py-3 bg-[#3289C4] text-white rounded-lg transition-all duration-300 hover:bg-[#010245]">Message on WhatsApp</a>
-      <button onclick="closePopup()" class="px-6 py-3 bg-[#010245] text-white rounded-lg transition-all duration-300 hover:bg-[#3289C4]">Close</button>
-    </div>
-  </div>
-</div>
+    
+    <style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInRight {
+      from { transform: translateX(100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    .animate-fadeIn {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    
+    .animate-slideInRight {
+      animation: slideInRight 1s ease-out forwards;
+    }
+    
+    .delay-100 {
+      animation-delay: 0.1s;
+    }
+    
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+    </style>
+    
 
-<script>
-  // Show popup immediately when page loads
-  window.addEventListener('DOMContentLoaded', () => {
-    const popup = document.getElementById('popup-message');
-    popup.classList.remove('translate-x-full');
-  });
-
-  function closePopup() {
-    const popup = document.getElementById('popup-message');
-    popup.classList.add('translate-x-full');
-  }
-</script>
-  </section>  
-  <!-- Footer -->
+      <!-- Footer -->
   <footer class="bg-[#010245] text-white py-12">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
