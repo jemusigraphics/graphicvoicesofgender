@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,6 @@
     .nav-link {
       position: relative;
     }
-
     .nav-link::after {
       content: '';
       position: absolute;
@@ -27,22 +25,18 @@
       background-color: #3289C4;
       transition: width 0.3s ease;
     }
-
     .nav-link:hover::after {
       width: 100%;
     }
-
     .social-icon {
       transition: all 0.3s ease;
     }
-
     .social-icon:hover {
       transform: translateY(-3px);
       color: #3289C4;
     }
   </style>
 </head>
-
 <body class="bg-[#010245] text-gray-800">
 
   <!-- Navbar -->
@@ -53,20 +47,15 @@
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center space-x-6">
-        <a href="index.html"
-          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Home</a>
+        <a href="index.html" class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Home</a>
         <div class="border-r border-white/30 h-6"></div>
-        <a href="about.html"
-          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">About</a>
+        <a href="about.html" class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">About</a>
         <div class="border-r border-white/30 h-6"></div>
-        <a href="blog.html"
-          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Blog</a>
+        <a href="blog.html" class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Blog</a>
         <div class="border-r border-white/30 h-6"></div>
-        <a href="portfolio.html"
-          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Portfolio</a>
+        <a href="portfolio.html" class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Portfolio</a>
         <div class="border-r border-white/30 h-6"></div>
-        <a href="contact.html"
-          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Contact</a>
+        <a href="contact.html" class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Contact</a>
         <div class="border-r border-white/30 h-6"></div>
         <!-- Social Icons -->
         <div class="flex space-x-4">
@@ -87,8 +76,7 @@
 
       <!-- Mobile Menu Button -->
       <button id="menu-btn" class="md:hidden flex items-center focus:outline-none transition-transform hover:scale-110">
-        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-          stroke="currentColor">
+        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
@@ -98,16 +86,11 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden bg-[#010245] shadow-lg md:hidden">
-      <a href="index.html"
-        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Home</a>
-      <a href="about.html"
-        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">About</a>
-      <a href="blog.html"
-        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Blog</a>
-      <a href="portfolio.html"
-        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Portfolio</a>
-      <a href="#contact.html"
-        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Contact</a>
+      <a href="index.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Home</a>
+      <a href="about.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">About</a>
+      <a href="blog.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Blog</a>
+      <a href="portfolio.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Portfolio</a>
+      <a href="contact.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Contact</a>
       <!-- Mobile Social Icons -->
       <div class="flex justify-center space-x-6 py-4">
         <a href="https://linkedin.com" target="_blank" class="social-icon text-white text-xl">
@@ -126,296 +109,227 @@
     </div>
   </nav>
 
-  <!-- Animated Equality Icons -->
-  <div class="fixed w-full h-screen pointer-events-none" style="z-index: 1;">
-    <div class="equality-icons absolute w-full h-full">
-      <i class="fas fa-venus text-white/30 absolute animate-float" style="left: 10%; top: 20%;"></i>
-      <i class="fas fa-mars text-white/30 absolute animate-float" style="left: 80%; top: 15%;"></i>
-      <i class="fas fa-transgender text-white/30 absolute animate-float" style="left: 30%; top: 70%;"></i>
-      <i class="fas fa-equals text-white/30 absolute animate-float" style="left: 70%; top: 60%;"></i>
-      <i class="fas fa-venus-mars text-white/30 absolute animate-float" style="left: 50%; top: 40%;"></i>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <section class="hero-section h-screen flex items-center justify-center relative pt-24 bg-cover bg-center w-full"
-    style="background-image: url('hero.jpg'); background-size: cover; background-repeat: no-repeat;">
-    <div class="absolute inset-0 bg-black/50"></div>
-    <div class="container mx-auto px-4 text-center space-y-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
-      <h1
-        class="font-['League_Spartan'] text-4xl md:text-7xl font-bold text-white tracking-wider drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] transform hover:scale-105"
-        style="font-family: 'League Spartan', sans-serif;">
-        Graphic Voices <br> of Gender
-      </h1>
-      <p class="text-base md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto px-4" data-aos="fade-up"
-        data-aos-delay="200">
-        Where Creativity Meets Advocacy: Exploring Design's Role in Gender Equality.
-      </p>
-      <a href="index.html"
-        class="inline-block px-6 py-3 bg-[#010245] hover:bg-[#3289C4] text-white font-bold rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 mx-4"
-        data-aos="fade-up" data-aos-delay="400">
-        Latest Post
-      </a>
+    <!-- Animated Equality Icons -->
+    <div class="fixed w-full h-screen pointer-events-none" style="z-index: 1;">
+      <div class="equality-icons absolute w-full h-full">
+        <i class="fas fa-venus text-white/30 absolute animate-float" style="left: 10%; top: 20%;"></i>
+        <i class="fas fa-mars text-white/30 absolute animate-float" style="left: 80%; top: 15%;"></i>
+        <i class="fas fa-transgender text-white/30 absolute animate-float" style="left: 30%; top: 70%;"></i>
+        <i class="fas fa-equals text-white/30 absolute animate-float" style="left: 70%; top: 60%;"></i>
+        <i class="fas fa-venus-mars text-white/30 absolute animate-float" style="left: 50%; top: 40%;"></i>
+      </div>
     </div>
 
-    <style>
-      @keyframes float {
-        0% {
-          transform: translate(0, 0) rotate(0deg);
-        }
+    <!-- Hero Section with Search -->
+    <section class="relative h-[60vh] flex items-center justify-center mt-16" style="background-image: url('banner.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="relative z-10 container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6" data-aos="fade-down">Explore Our Blog</h1>
+            <p class="text-xl text-gray-300 mb-8" data-aos="fade-up">Discover articles about design, gender equality, and social innovation</p>
+            <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        id="search-input"
+                        class="w-full px-6 py-4 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/30 focus:border-[#3289C4] focus:outline-none placeholder-white/70"
+                        placeholder="Search articles..."
+                    >
+                    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-[#3289C4] transition-colors">
+                        <i class="fas fa-search text-xl"></i>
+                    </button>
+                </div>
+                <div id="search-results" class="mt-4 bg-white/10 backdrop-blur-md rounded-lg hidden">
+                    <!-- Search results will be populated here -->
+                </div>
+            </div>
+        </div>
+    </section>
 
-        50% {
-          transform: translate(10px, -10px) rotate(5deg);
-        }
-
-        100% {
-          transform: translate(0, 0) rotate(0deg);
-        }
-      }
-
-      .animate-float {
-        animation: float 6s ease-in-out infinite;
-        font-size: 2rem;
-        opacity: 0.3;
-      }
-
-      .equality-icons i:nth-child(2n) {
-        animation-delay: 2s;
-      }
-
-      .equality-icons i:nth-child(3n) {
-        animation-delay: 4s;
-      }
-    </style>
-
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
-
-    <!-- Original JavaScript remains unchanged -->
     <script>
-      var TxtType = function (el, toRotate, period) {
-        // ... (keep existing typing animation code)
-      };
-      // ... (keep rest of the original script)
+        // Sample blog data with URLs
+        const blogPosts = [
+            { 
+                title: "Creating Gender-Inclusive Designs", 
+                tags: ["design", "gender", "inclusion"],
+                url: "post2.html"
+            },
+            { 
+                title: "Breaking Gender Stereotypes", 
+                tags: ["stereotypes", "equality", "design"],
+                url: "post4.html"
+            },
+            { 
+                title: "Design Innovation for Social Change", 
+                tags: ["innovation", "social", "change"],
+                url: "post3.html"
+            },
+            { 
+                title: "The Future of Inclusive Design", 
+                tags: ["future", "inclusive", "design"],
+                url: "post5.html"
+            }
+        ];
+
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            if (searchTerm.length < 2) {
+                searchResults.classList.add('hidden');
+                return;
+            }
+
+            const filteredPosts = blogPosts.filter(post => 
+                post.title.toLowerCase().includes(searchTerm) ||
+                post.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+            );
+
+            displayResults(filteredPosts);
+        });
+
+        function displayResults(results) {
+            if (results.length === 0) {
+                searchResults.classList.add('hidden');
+                return;
+            }
+
+            searchResults.innerHTML = results
+                .map(post => `
+                    <a href="${post.url}" class="block p-4 border-b border-white/10 hover:bg-white/20 transition-colors cursor-pointer">
+                        <h3 class="text-white font-semibold">${post.title}</h3>
+                        <div class="flex gap-2 mt-2">
+                            ${post.tags.map(tag => `
+                                <span class="text-sm text-[#3289C4] bg-white/10 px-2 py-1 rounded">${tag}</span>
+                            `).join('')}
+                        </div>
+                    </a>
+                `).join('');
+
+            searchResults.classList.remove('hidden');
+        }
+
+        // Close search results when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchResults.contains(e.target) && !searchInput.contains(e.target)) {
+                searchResults.classList.add('hidden');
+            }
+        });
     </script>
-  </section>
 
-  <!-- Blog Post Section -->
-  <section class="pt-32 pb-16">
-    <div class="container mx-auto px-4 max-w-4xl">
-      <!-- Post Header -->
-      <div class="mb-8">
-        <div class="flex items-center space-x-2 text-gray-400 text-sm mb-4">
-          <span>Posted by James Hamuzah</span>
-          <span>•</span>
-          <span>January 11, 2024</span>
-          <span>•</span>
-          <span>Graphic Voices of Gender/Graphic Design Career</span>
-        </div>
-        <h1 class="text-3xl md:text-4xl font-bold text-white mb-6">The Need for Gender Inclusivity in Malawi's Graphic
-          Design Industry</h1>
-        <div class="relative overflow-hidden group">
-          <img src="post1.jpg" alt="Gender Inclusivity in Graphic Design"
-            class="w-full h-[400px] object-cover rounded-lg mb-8 shadow-lg transition-transform duration-300 transform group-hover:scale-125 cursor-zoom-in">
-        </div>
-      </div>
+<!-- Similar Posts Section -->
+    <section class="bg-[#010245] py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-[#3289C4] mb-8 hover:text-white transition-colors">Related Posts</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Similar Post 1 -->
+                <div class="bg-[#010245] rounded-lg overflow-hidden shadow-lg transition-all hover:scale-105 border border-[#3289C4]/20 hover:border-[#3289C4]">
+                    <a href="post2.html" class="block">
+                        <div class="overflow-hidden">
+                            <img src="post2.jpg" alt="Women in Tech" class="w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <i class="fas fa-user-circle text-[#3289C4] text-xl"></i>
+                                <span class="text-gray-400">James Hamuzah</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">Creating Gender-Inclusive Designs</h3>
+                            <p class="text-gray-400 mb-4">Exploring the challenges and triumphs of women in technology leadership positions...</p>
+                            <div class="flex items-center text-sm text-[#3289C4]/70">
+                                <span id="post1Date"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-      <!-- Post Content -->
-      <article class="prose prose-lg prose-invert mx-auto">
-        <p class="text-gray-300 leading-relaxed mb-8 text-justify">
-          Graphic design in Malawi has traditionally been a male-dominated field, like many other professions. The 2024
-          Maso Awards, a popular annual event in Malawi, highlighted this trend, with 100 percent of the nominees in the
-          graphic design category being men. This underscores the lack of women and girls in graphic design career.
-        </p>
+                <!-- Similar Post 2 -->
+                <div class="bg-[#010245] rounded-lg overflow-hidden shadow-lg transition-all hover:scale-105 border border-[#3289C4]/20 hover:border-[#3289C4]">
+                    <a href="post3.html" class="block">
+                        <div class="overflow-hidden">
+                            <img src="post3.jpg" alt="Design Innovation" class="w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <i class="fas fa-user-circle text-[#3289C4] text-xl"></i>
+                                <span class="text-gray-400">James Hamuzah</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">Design Innovation for Social Change</h3>
+                            <p class="text-gray-400 mb-4">How creative design is shaping the future of social activism and equality...</p>
+                            <div class="flex items-center text-sm text-[#3289C4]/70">
+                                <span id="post2Date"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-        <p class="text-gray-300 leading-relaxed mb-8 text-justify">
-          The problem stems from the broader issue of women in technology. Since graphic design involves interacting
-          with computers and other devices, many women and girls find it difficult to break into the field. However, I
-          believe this challenge can be addressed if we put greater emphasis on encouraging and supporting women in
-          technology.
-        </p>
+                <!-- Similar Post 3 -->
+                <div class="bg-[#010245] rounded-lg overflow-hidden shadow-lg transition-all hover:scale-105 border border-[#3289C4]/20 hover:border-[#3289C4]">
+                    <a href="post4.html" class="block">
+                        <div class="overflow-hidden">
+                            <img src="post4.jpg" alt="Gender Equality" class="w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <i class="fas fa-user-circle text-[#3289C4] text-xl"></i>
+                                <span class="text-gray-400">James Hamuzah</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">Breaking Gender Stereotypes in Design</h3>
+                            <p class="text-gray-400 mb-4">Understanding and challenging traditional gender roles through innovative design approaches...</p>
+                            <div class="flex items-center text-sm text-[#3289C4]/70">
+                                <span id="post3Date"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-        <p class="text-gray-300 leading-relaxed mb-8 text-justify">
-          Nonetheless, I believe a career in graphic design holds great potential to address gender inequality if
-          pursued seriously. For instance, women have proven their effectiveness in decision-making bodies like
-          parliament. If we believe that women can drive meaningful change when in positions of power, the same logic
-          applies to graphic design.
-        </p>
-
-        <p class="text-gray-300 leading-relaxed mb-8 text-justify">
-          Women, drawing from their lived experiences of stereotypes, can be at the forefront of challenging and
-          dismantling these biases, often doing so more effectively than their male counterparts. By increasing their
-          involvement in graphic design, we can expect visuals that not only challenge but also reshape gender
-          stereotypes.
-        </p>
-
-        <p class="text-gray-300 leading-relaxed mb-8 text-justify">
-          To girls and women with knowledge in the field, I believe it's important to start now rather than wait for the
-          perfect moment. It's not about perfection but about taking action. Men in the field can also contribute by
-          supporting gender inclusivity and mentoring young women.
-        </p>
-
-        <p class="text-gray-300 leading-relaxed mb-8 text-justify">
-          It should be noted, however, that the future of gender representation in Malawi's graphic design industry
-          looks promising. With increased awareness and advocacy, one example is Tech Pearl, which has been training
-          girls in graphic design.
-        </p>
-      </article>
-      <!-- Like Button Section -->
-      <div class="flex items-center justify-center space-x-4 my-8">
-        <button id="likeButton" class="flex items-center space-x-2 px-6 py-3 bg-[#3289C4] text-white rounded-full hover:bg-[#010245] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-          <i class="fas fa-heart"></i>
-          <span>Like</span>
-        </button>
-        <span id="likeCount" class="text-white text-lg font-bold">0</span>
-      </div>
-
-      <script>
-        const likeButton = document.getElementById('likeButton');
-        const likeCount = document.getElementById('likeCount');
-        const postId = 'post1'; // Unique identifier for this post
-
-        // Get stored likes
-        let likes = parseInt(localStorage.getItem(`${postId}_likes`) || 0);
-        let hasLiked = localStorage.getItem(`${postId}_hasLiked`) === 'true';
-
-        // Update initial state
-        likeCount.textContent = likes;
-        if (hasLiked) {
-          likeButton.disabled = true;
-          likeButton.innerHTML = '<i class="fas fa-heart text-red-500"></i><span>Liked</span>';
-        }
-
-        likeButton.addEventListener('click', () => {
-          if (!hasLiked) {
-            likes++;
-            hasLiked = true;
-            localStorage.setItem(`${postId}_likes`, likes);
-            localStorage.setItem(`${postId}_hasLiked`, 'true');
-            likeCount.textContent = likes;
-            likeButton.disabled = true;
-            likeButton.innerHTML = '<i class="fas fa-heart text-red-500"></i><span>Liked</span>';
-          }
-        });
-      </script>
-      <!-- Comment Button -->
-      <div class="flex justify-center mt-8">
-        <button onclick="showPopup()" 
-          class="px-6 py-3 bg-[#3289C4] text-white rounded-full hover:bg-[#010245] transition-all duration-300">
-          <i class="fas fa-comment mr-2"></i>
-          Leave a Comment
-        </button>
-      </div>
-
-      <!-- Comment Pop-up -->
-      <div id="commentPopup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-[#010245] p-6 rounded-lg shadow-xl max-w-md w-full mx-4">
-          <div class="flex justify-between items-center mb-4">
-        <h3 class="text-xl font-bold text-white">Leave a Comment</h3>
-        <button onclick="closePopup()" class="text-white hover:text-[#3289C4] transition-colors">
-          <i class="fas fa-times text-xl"></i>
-        </button>
-          </div>
-          <textarea id="commentText" class="w-full p-3 rounded bg-gray-800 text-white border border-gray-700 focus:border-[#3289C4] focus:outline-none mb-4" rows="4" placeholder="Write your comment here..."></textarea>
-          <div class="flex justify-between">
-        <button onclick="sendViaWhatsApp()" class="flex items-center px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors">
-          <i class="fab fa-whatsapp mr-2"></i>
-          WhatsApp
-        </button>
-        <button onclick="sendViaEmail()" class="flex items-center px-4 py-2 bg-[#3289C4] text-white rounded hover:bg-blue-700 transition-colors">
-          <i class="fas fa-envelope mr-2"></i>
-          Email
-        </button>
-          </div>
-        </div>
-      </div>
-
-      <script>
-        function showPopup() {
-          document.getElementById('commentPopup').style.display = 'flex';
-        }
-
-        function closePopup() {
-          document.getElementById('commentPopup').style.display = 'none';
-        }
-
-        function sendViaWhatsApp() {
-          const comment = document.getElementById('commentText').value;
-          const encodedComment = encodeURIComponent(comment);
-          window.open(`https://wa.me/+265123456789?text=${encodedComment}`, '_blank');
-        }
-
-        function sendViaEmail() {
-          const comment = document.getElementById('commentText').value;
-          const encodedComment = encodeURIComponent(comment);
-          window.location.href = `mailto:your@email.com?subject=Blog Comment&body=${encodedComment}`;
-        }
-
-        // Close popup when clicking outside
-        document.getElementById('commentPopup').addEventListener('click', (e) => {
-          if (e.target.id === 'commentPopup') {
-        closePopup();
-          }
-        });
-
-        // Close popup with Escape key
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') {
-        closePopup();
-          }
-        });
-      </script>
-  <!-- Similar Posts Section -->
-  <section class="bg-[#010245] py-16">
-    <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-bold text-[#3289C4] mb-8 hover:text-white transition-colors">Similar Posts</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Similar Post 1 -->
-        <div
-          class="bg-[#010245] rounded-lg overflow-hidden shadow-lg transition-all hover:scale-105 border border-[#3289C4]/20 hover:border-[#3289C4]">
-          <a href="post2.html" class="block">
-            <div class="overflow-hidden">
-              <img src="post2.jpg" alt="Women in Tech"
-                class="w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">Breaking Barriers:
-                Women in Tech Leadership</h3>
-              <p class="text-gray-400 mb-4">Exploring the challenges and triumphs of women in technology leadership
-                positions...</p>
-              <div class="flex items-center text-sm text-[#3289C4]/70">
-                <span>March 15, 2024</span>
-                <span class="mx-2">•</span>
-                <span>5 min read</span>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Similar Post 2 -->
-        <div
-          class="bg-[#010245] rounded-lg overflow-hidden shadow-lg transition-all hover:scale-105 border border-[#3289C4]/20 hover:border-[#3289C4]">
-          <a href="post3.html" class="block">
-            <div class="overflow-hidden">
-              <img src="post3.jpg" alt="Design Innovation"
-                class="w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110">
-            </div>
-            <div class="p-6">
-              <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">Design Innovation for
-                Social Change</h3>
-              <p class="text-gray-400 mb-4">How creative design is shaping the future of social activism and equality...
-              </p>
-              <div class="flex items-center text-sm text-[#3289C4]/70"></div>
-              <span>March 10, 2024</span>
-              <span class="mx-2">•</span>
-              <span>4 min read</span>
+                <!-- Similar Post 4 -->
+                <div class="bg-[#010245] rounded-lg overflow-hidden shadow-lg transition-all hover:scale-105 border border-[#3289C4]/20 hover:border-[#3289C4]">
+                    <a href="post5.html" class="block">
+                        <div class="overflow-hidden">
+                            <img src="post5.jpg" alt="Inclusive Design" class="w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center space-x-3 mb-3">
+                                <i class="fas fa-user-circle text-[#3289C4] text-xl"></i>
+                                <span class="text-gray-400">James Hamuzah</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">The Future of Inclusive Design</h3>
+                            <p class="text-gray-400 mb-4">Exploring emerging trends in inclusive design and their impact on gender equality...</p>
+                            <div class="flex items-center text-sm text-[#3289C4]/70">
+                                <span id="post4Date"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
-        </a>
-      </div>
-    </div>
-    </div>
-  </section>
+    </section>
 
+    <script>
+        // Update dates for posts
+        const updateDates = () => {
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit', 
+                minute: '2-digit'
+            };
+            
+            document.getElementById('post1Date').textContent = now.toLocaleDateString('en-US', options);
+            document.getElementById('post2Date').textContent = now.toLocaleDateString('en-US', options);
+            document.getElementById('post3Date').textContent = now.toLocaleDateString('en-US', options);
+            document.getElementById('post4Date').textContent = now.toLocaleDateString('en-US', options);
+        };
+
+        // Update initially
+        updateDates();
+        
+        // Update every minute
+        setInterval(updateDates, 60000);
+    </script>
   <!-- Footer -->
   <footer class="bg-[#010245] text-white py-12">
     <div class="container mx-auto px-4">
@@ -427,10 +341,10 @@
         <div>
           <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2">
-            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-            <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
             <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-            <li><a href="portfolio.html" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
+            <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
           </ul>
         </div>
         <div>
@@ -444,21 +358,17 @@
         <div>
           <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
           <form class="space-y-4">
-            <input type="email" placeholder="Enter your email"
-              class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-teal-500 focus:outline-none">
-            <button
-              class="w-full px-4 py-2 bg-[#3289C4] text-white rounded hover:bg-[#010245)] transition-colors">Subscribe</button>
+            <input type="email" placeholder="Enter your email" class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-teal-500 focus:outline-none">
+            <button class="w-full px-4 py-2 bg-[#3289C4] text-white rounded hover:bg-[#010245)] transition-colors">Subscribe</button>
           </form>
         </div>
       </div>
       <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-        <p>©
-          <script>document.write(new Date().getFullYear())</script> Graphic Voices. All rights reserved.
-          <p class="mt-4">
-            <a href="https://wa.me/265990705194" class="text-[#3289C4] hover:text-white transition-colors">
-              Contact the Developer <i class="fab fa-whatsapp"></i>
-            </a>
-          </p>
+        <p>© <script>document.write(new Date().getFullYear())</script> Graphic Voices. All rights reserved.</p>
+        <p class="mt-4">
+          <a href="https://wa.me/265990705194" class="text-[#3289C4] hover:text-white transition-colors">
+            Contact the Developer <i class="fab fa-whatsapp"></i>
+          </a>
         </p>
       </div>
     </div>
@@ -466,7 +376,7 @@
 
   <script>
     AOS.init();
-
+    
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
@@ -484,36 +394,27 @@
 
   <style>
     @keyframes gradient {
-      0% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-
+    
     .animate-gradient {
       background-size: 200% auto;
       animation: gradient 3s ease infinite;
     }
   </style>
   <!-- Scroll to top button -->
-  <button id="scroll-to-top"
-    class="fixed bottom-4 right-4 bg-[#010245] text-white p-3 rounded-full shadow-lg hover:bg-[#3289C4] transition-colors opacity-0 invisible">
+  <button id="scroll-to-top" class="fixed bottom-4 right-4 bg-[#010245] text-white p-3 rounded-full shadow-lg hover:bg-[#3289C4] transition-colors opacity-0 invisible">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
     </svg>
   </button>
-
+  
   <script>
     // Scroll to top functionality
     const scrollToTopBtn = document.getElementById('scroll-to-top');
-
+    
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
         scrollToTopBtn.classList.remove('opacity-0', 'invisible');
@@ -523,7 +424,7 @@
         scrollToTopBtn.classList.remove('opacity-100', 'visible');
       }
     });
-
+  
     scrollToTopBtn.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
@@ -531,13 +432,12 @@
       });
     });
   </script>
-
+  
   <style>
     #scroll-to-top {
       transition: opacity 0.3s, visibility 0.3s;
     }
   </style>
-
+  
 </body>
-
 </html>
