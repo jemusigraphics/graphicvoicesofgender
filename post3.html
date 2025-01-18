@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphic Voices of Gender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #3289C4;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: #3289C4;
+        }
+    </style>
+</head>
+
+<body class="bg-[#010245] text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-[#010245] shadow-md fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="text-xl font-bold text-white hover:scale-105 transition-transform">Graphic
+                Voices</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html"
+                    class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Home</a>
+                <div class="border-r border-white/30 h-6"></div>
+                <a href="about.html"
+                    class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">About</a>
+                <div class="border-r border-white/30 h-6"></div>
+                <a href="blog.html"
+                    class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Blog</a>
+                <div class="border-r border-white/30 h-6"></div>
+                <a href="contact.html"
+                    class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Contact</a>
+                <div class="border-r border-white/30 h-6"></div>
+                <!-- Social Icons -->
+                <div class="flex space-x-4">
+                    <a href="https://linkedin.com" target="_blank" class="social-icon text-white text-xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon text-white text-xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon text-white text-xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://medium.com" target="_blank" class="social-icon text-white text-xl">
+                        <i class="fab fa-medium"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn"
+                class="md:hidden flex items-center focus:outline-none transition-transform hover:scale-110">
+                <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="border-t border-white/20"></div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-[#010245] shadow-lg md:hidden">
+            <a href="index.html"
+                class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Home</a>
+            <a href="about.html"
+                class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">About</a>
+            <a href="blog.html"
+                class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Blog</a>
+            <a href="#contact.html"
+                class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Contact</a>
+            <!-- Mobile Social Icons -->
+            <div class="flex justify-center space-x-6 py-4">
+                <a href="https://linkedin.com" target="_blank" class="social-icon text-white text-xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-icon text-white text-xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-icon text-white text-xl">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://medium.com" target="_blank" class="social-icon text-white text-xl">
+                    <i class="fab fa-medium"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Equality Icons -->
+    <div class="fixed w-full h-screen pointer-events-none" style="z-index: 1;">
+        <div class="equality-icons absolute w-full h-full">
+            <i class="fas fa-venus text-white/30 absolute animate-float" style="left: 10%; top: 20%;"></i>
+            <i class="fas fa-mars text-white/30 absolute animate-float" style="left: 80%; top: 15%;"></i>
+            <i class="fas fa-transgender text-white/30 absolute animate-float" style="left: 30%; top: 70%;"></i>
+            <i class="fas fa-equals text-white/30 absolute animate-float" style="left: 70%; top: 60%;"></i>
+            <i class="fas fa-venus-mars text-white/30 absolute animate-float" style="left: 50%; top: 40%;"></i>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section h-48 flex items-center justify-center relative pt-24 bg-cover bg-center w-full"
+        style="background-image: url('post3.jpg'); background-size: cover; background-repeat: no-repeat;">
+        <div class="container mx-auto px-4 text-center space-y-6 relative z-10" data-aos="fade-up"
+            data-aos-duration="1000">
+        </div>
+
+        <style>
+            @keyframes float {
+                0% {
+                    transform: translate(0, 0) rotate(0deg);
+                }
+
+                50% {
+                    transform: translate(10px, -10px) rotate(5deg);
+                }
+
+                100% {
+                    transform: translate(0, 0) rotate(0deg);
+                }
+            }
+
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+                font-size: 2rem;
+                opacity: 0.3;
+            }
+
+            .equality-icons i:nth-child(2n) {
+                animation-delay: 2s;
+            }
+
+            .equality-icons i:nth-child(3n) {
+                animation-delay: 4s;
+            }
+        </style>
+
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    </section>
+
+    <!-- Blog Post Section -->
+    <section class="pt-24 pb-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <!-- Post Header -->
+            <div class="mb-8">
+                <div class="flex items-center space-x-4 mb-4 text-gray-400 text-sm">
+                    <!-- Author Icon and Name -->
+                    <span class="flex items-center space-x-2">
+                        <i class="fas fa-user"></i>
+                        <strong>James Hamuza</strong>
+                    </span>
+                    <!-- Divider -->
+                    <span>|</span>
+                    <!-- Dynamic Date and Time -->
+                    <span id="postDate"></span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-white mb-6">Through The Lens: Unveiling Gender Stereotypes in Newspaper Designs</h1>
+                </h1>
+                <div class="relative overflow-hidden group">
+                    <img src="inside post3.jpg" alt="Gender Inclusivity in Graphic Design"
+                        class="w-full rounded-lg mb-2 shadow-lg transition-transform duration-300 transform group-hover:scale-125 cursor-zoom-in">
+                    <p class="text-sm text-gray-400 text-center mb-8 italic">Women from major Malawian political parties featured on the front page as dancers</p>
+                </div>
+            </div>
+            <p class="mb-8 text-gray-300 leading-relaxed">
+                Have you ever noticed how women are often shown in newspapers, especially on the front page? It's common
+                to see women dancing at rallies or cheering for a party leader, while men are shown in suits, giving
+                speeches, or leading discussions.
+            </p>
+
+            <!-- Post Content -->
+            <article class="prose prose-lg prose-invert mx-auto">
+                <div class="space-y-6">
+                    <p class="text-gray-300">
+                        This creates a stereotype that women are just supporters, not leaders. It sends a message that
+                        men are the decision-makers, while women are there to celebrate or follow.
+                    </p>
+
+                    <p class="text-gray-300">
+                        Newspapers have the power to shape how people think about gender roles. If women were shown in
+                        serious roles—making decisions, giving speeches, or leading projects—it would challenge these
+                        outdated ideas.
+                    </p>
+
+                    <p class="text-gray-300">
+                        It's time for newspapers to represent women and men equally, showing them in ways that reflect
+                        their true potential and contributions. Let's move away from stereotypes and celebrate real
+                        leadership, no matter who it comes from.
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <script>
+        // Display fixed date and time
+        const postDateElement = document.getElementById('postDate');
+        postDateElement.textContent = `Posted on January 19, 2025`;
+
+        // Like button functionality
+        const likeButton = document.getElementById('likeButton');
+        const likeCount = document.getElementById('likeCount');
+        const postId = 'post1'; // Unique identifier for this post
+
+        // Get stored likes
+        let likes = parseInt(localStorage.getItem(`${postId}_likes`) || 0);
+        let hasLiked = localStorage.getItem(`${postId}_hasLiked`) === 'true';
+
+        // Update initial state
+        likeCount.textContent = likes;
+        if (hasLiked) {
+            likeButton.disabled = true;
+            likeButton.innerHTML = '<i class="fas fa-heart text-red-500"></i><span>Liked</span>';
+        }
+
+        likeButton.addEventListener('click', () => {
+            if (!hasLiked) {
+                likes++;
+                hasLiked = true;
+                localStorage.setItem(`${postId}_likes`, likes);
+                localStorage.setItem(`${postId}_hasLiked`, 'true');
+                likeCount.textContent = likes;
+                likeButton.disabled = true;
+                likeButton.innerHTML = '<i class="fas fa-heart text-red-500"></i><span>Liked</span>';
+            }
+        });
+    </script>
+
+    <!-- Comments Section -->
+    <section class="py-16 bg-[#010245]">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-2xl font-bold mb-8 text-[#3289C4]">Comments</h2>
+
+            <div id="comments-list" class="space-y-4">
+                <!-- Comments will be displayed here -->
+            </div>
+
+            <!-- Add Comment Form -->
+            <div class="mt-6 bg-[#010245]/50 p-6 rounded-lg border border-[#3289C4]/20">
+                <h3 class="text-lg font-semibold mb-4 text-[#3289C4]">Add a Comment</h3>
+                <input type="text" id="commenter-name"
+                    class="w-full p-2 mb-4 rounded-lg bg-[#010245] text-white border border-[#3289C4]/20"
+                    placeholder="Your name">
+                <textarea id="comment-text"
+                    class="w-full p-2 mb-4 rounded-lg bg-[#010245] text-white border border-[#3289C4]/20" rows="4"
+                    placeholder="Write your comment..."></textarea>
+                <button id="submit-comment"
+                    class="w-full bg-[#3289C4] hover:bg-[#010245] text-white py-2 rounded-lg transition duration-300">Submit
+                    Comment</button>
+            </div>
+        </div>
+
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+            import { getFirestore, collection, getDocs, addDoc, serverTimestamp, query, orderBy, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyBoOfricXTdLMs9zDiOoQifSNa3gNMZ6MM",
+                authDomain: "comments-71cb0.firebaseapp.com",
+                projectId: "comments-71cb0",
+                storageBucket: "comments-71cb0.firebasestorage.app",
+                messagingSenderId: "254323061538",
+                appId: "1:254323061538:web:3a1004d5fc9ed9a6872b7b"
+            };
+
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+            const commentsRef = collection(db, 'comments');
+            let currentUserName = '';
+
+            function formatDate(timestamp) {
+                const date = timestamp.toDate();
+                return date.toLocaleString();
+            }
+
+            async function deleteComment(docId) {
+                try {
+                    await deleteDoc(doc(db, 'comments', docId));
+                    await loadComments();
+                } catch (error) {
+                    console.error("Error deleting comment: ", error);
+                }
+            }
+
+            async function editComment(docId, currentText) {
+                const newText = prompt("Edit your comment:", currentText);
+                if (newText?.trim()) {
+                    try {
+                        await updateDoc(doc(db, 'comments', docId), {
+                            text: newText,
+                            timestamp: serverTimestamp()
+                        });
+                        await loadComments();
+                    } catch (error) {
+                        console.error("Error updating comment: ", error);
+                    }
+                }
+            }
+
+            async function hasUserCommented(userName) {
+                const q = query(commentsRef);
+                const snapshot = await getDocs(q);
+                return snapshot.docs.some(doc => doc.data().name === userName);
+            }
+
+            async function loadComments() {
+                const q = query(commentsRef, orderBy('timestamp', 'desc'));
+                const snapshot = await getDocs(q);
+                const commentsList = document.getElementById('comments-list');
+                commentsList.innerHTML = '';
+
+                snapshot.forEach((doc) => {
+                    const comment = doc.data();
+                    if (comment.timestamp) {
+                        const commentDiv = document.createElement('div');
+                        commentDiv.classList.add('p-4', 'bg-[#010245]', 'rounded-lg', 'border', 'border-[#3289C4]/20');
+
+                        const actionButtons = comment.name === currentUserName ? `
+            <button onclick="editComment('${doc.id}', '${comment.text.replace(/'/g, "\\'")}')" class="text-sm text-[#3289C4] hover:text-white px-3 py-1 rounded">Edit</button>
+            <button onclick="deleteComment('${doc.id}')" class="text-sm text-red-400 hover:text-red-500 px-3 py-1 rounded">Delete</button>
+          ` : '';
+
+                        commentDiv.innerHTML = `
+            <div class="flex justify-between items-center mb-2">
+              <p class="font-semibold text-[#3289C4]">${comment.name}</p>
+              <div class="flex items-center gap-2">
+                <p class="text-sm text-gray-400">${formatDate(comment.timestamp)}</p>
+                ${actionButtons}
+              </div>
+            </div>
+            <p class="text-gray-300">${comment.text}</p>
+          `;
+                        commentsList.appendChild(commentDiv);
+                    }
+                });
+            }
+
+            document.getElementById('submit-comment').addEventListener('click', async () => {
+                const commentText = document.getElementById('comment-text').value;
+                const nameInput = document.getElementById('commenter-name').value;
+
+                if (!commentText.trim() || !nameInput.trim()) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+
+                // Check localStorage for previous comments
+                const hasCommented = localStorage.getItem(`commented_${nameInput.toLowerCase()}`);
+                if (hasCommented) {
+                    alert('You have already commented. Only one comment per person is allowed.');
+                    return;
+                }
+
+                try {
+                    if (await hasUserCommented(nameInput)) {
+                        alert('You have already commented. Only one comment per person is allowed.');
+                        return;
+                    }
+
+                    currentUserName = nameInput;
+                    await addDoc(commentsRef, {
+                        name: nameInput,
+                        text: commentText,
+                        timestamp: serverTimestamp()
+                    });
+
+                    // Store the comment status in localStorage
+                    localStorage.setItem(`commented_${nameInput.toLowerCase()}`, 'true');
+
+                    document.getElementById('comment-text').value = '';
+                    document.getElementById('commenter-name').value = '';
+                    await loadComments();
+                } catch (error) {
+                    console.error("Error adding comment: ", error);
+                }
+            });
+
+            window.deleteComment = deleteComment;
+            window.editComment = editComment;
+
+            loadComments();
+        </script>
+    </section>
+    <!-- Similar Posts Section -->
+    <section class="bg-[#010245] py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-[#3289C4] mb-8 hover:text-white transition-colors">Related Posts</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Similar Post 1 -->
+                <div
+                    class="bg-[#010245] rounded-lg overflow-hidden shadow-lg transition-all hover:scale-105 border border-[#3289C4]/20 hover:border-[#3289C4]">
+                    <a href="post3.html" class="block">
+                        <div class="overflow-hidden">
+                            <img src="post3.jpg" alt="Women in Tech"
+                                class="w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">Through
+                                the Lens: Unveiling Gender Stereotypes in Newspapers</h3>
+                            <p class="text-gray-400 mb-4">Newspaper photos often reflect gender bias, subtly shaping how
+                                we perceive men and women. Men are frequently portrayed...</p>
+                            <div class="flex items-center text-sm text-[#3289C4]/70">
+                                <span>January 20, 2025</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Similar Post 2 -->
+                <div
+                    class="bg-[#010245] rounded-lg overflow-hidden shadow-lg transition-all hover:scale-105 border border-[#3289C4]/20 hover:border-[#3289C4]">
+                    <a href="post1.html" class="block">
+                        <div class="overflow-hidden">
+                            <img src="post1.jpg" alt="Design Innovation"
+                                class="w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">From
+                                Bias to Balance:Gender in Graphic Design Career</h3>
+                            <p class="text-gray-400 mb-4">Graphic design in Malawi has traditionally been a
+                                male-dominated field, like many other professions. The 2024 Maso Awards, a popular
+                                annual event in Malawi, highlighted this trend, with...
+                            </p>
+                            <div class="flex items-center text-sm text-[#3289C4]/70">
+                                <span>January 18, 2025</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#010245] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Graphic Voices</h3>
+                    <p class="text-gray-400">Visual Voices: Challenging Gender Stereotypes Through Art</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="" class="text-gray-400 hover:text-white transition-colors">Twitter</a></li>
+                        <li><a href="" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
+                        <li><a href="" class="text-gray-400 hover:text-white transition-colors">Medium</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-teal-500 focus:outline-none">
+                        <button
+                            class="w-full px-4 py-2 bg-[#3289C4] text-white rounded hover:bg-[#010245)] transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>©
+                    <script>document.write(new Date().getFullYear())</script> Graphic Voices. All rights reserved.
+                </p>
+                <p class="mt-4">
+                    <a href="https://wa.me/265990705194" class="text-[#3289C4] hover:text-white transition-colors">
+                        Contact the Developer <i class="fab fa-whatsapp"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init();
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+
+    <style>
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animate-gradient {
+            background-size: 200% auto;
+            animation: gradient 3s ease infinite;
+        }
+    </style>
+    <!-- Scroll to top button -->
+    <button id="scroll-to-top"
+        class="fixed bottom-4 right-4 bg-[#010245] text-white p-3 rounded-full shadow-lg hover:bg-[#3289C4] transition-colors opacity-0 invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                scrollToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+                scrollToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+    <style>
+        #scroll-to-top {
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+    </style>
+
+</body>
+<script>
+    // Disable right click
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    // Disable keyboard shortcuts that could bypass right-click protection
+    document.addEventListener('keydown', function (e) {
+        if (e.ctrlKey || e.keyCode == 123) { // 123 is F12
+            e.preventDefault();
+        }
+    });
+</script>
+
+</html>
