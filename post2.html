@@ -385,7 +385,7 @@
   <script>
     // Display fixed date and time
     const postDateElement = document.getElementById('postDate');
-    postDateElement.textContent = `Posted on January 18, 2025`;
+    postDateElement.textContent = `Posted on December 28, 2025`;
 
     // Like button functionality
     const likeButton = document.getElementById('likeButton');
@@ -416,160 +416,161 @@
     });
   </script>
 
-  <!-- Comments Section -->
-  <section class="py-16 bg-[#010245]">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <h2 class="text-2xl font-bold mb-8 text-[#3289C4]">Comments</h2>
+<!-- Comments Section -->
+<section class="py-16 bg-[#010245]">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <h2 class="text-2xl font-bold mb-8 text-[#3289C4]">Comments</h2>
 
-      <div id="comments-list" class="space-y-4">
-        <!-- Comments will be displayed here -->
-      </div>
-
-      <!-- Add Comment Form -->
-      <div class="mt-6 bg-[#010245]/50 p-6 rounded-lg border border-[#3289C4]/20">
-        <h3 class="text-lg font-semibold mb-4 text-[#3289C4]">Add a Comment</h3>
-        <input type="text" id="commenter-name"
-          class="w-full p-2 mb-4 rounded-lg bg-[#010245] text-white border border-[#3289C4]/20" placeholder="Your name">
-        <textarea id="comment-text"
-          class="w-full p-2 mb-4 rounded-lg bg-[#010245] text-white border border-[#3289C4]/20" rows="4"
-          placeholder="Write your comment..."></textarea>
-        <button id="submit-comment"
-          class="w-full bg-[#3289C4] hover:bg-[#010245] text-white py-2 rounded-lg transition duration-300">Submit
-          Comment</button>
-      </div>
+    <div id="comments-list" class="space-y-4">
+      <!-- Comments will be displayed here -->
     </div>
 
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-      import { getFirestore, collection, getDocs, addDoc, serverTimestamp, query, orderBy, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+    <!-- Add Comment Form -->
+    <div class="mt-6 bg-[#010245]/50 p-6 rounded-lg border border-[#3289C4]/20">
+      <h3 class="text-lg font-semibold mb-4 text-[#3289C4]">Add a Comment</h3>
+      <input type="text" id="commenter-name"
+        class="w-full p-2 mb-4 rounded-lg bg-[#010245] text-white border border-[#3289C4]/20" placeholder="Your name">
+      <textarea id="comment-text"
+        class="w-full p-2 mb-4 rounded-lg bg-[#010245] text-white border border-[#3289C4]/20" rows="4"
+        placeholder="Write your comment..."></textarea>
+      <button id="submit-comment"
+        class="w-full bg-[#3289C4] hover:bg-[#010245] text-white py-2 rounded-lg transition duration-300">Submit
+        Comment</button>
+    </div>
+  </div>
 
-      const firebaseConfig = {
-        apiKey: "AIzaSyBoOfricXTdLMs9zDiOoQifSNa3gNMZ6MM",
-        authDomain: "comments-71cb0.firebaseapp.com",
-        projectId: "comments-71cb0",
-        storageBucket: "comments-71cb0.firebasestorage.app",
-        messagingSenderId: "254323061538",
-        appId: "1:254323061538:web:3a1004d5fc9ed9a6872b7b"
-      };
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+    import { getFirestore, collection, getDocs, addDoc, serverTimestamp, query, orderBy, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
-      const commentsRef = collection(db, 'comments');
-      let currentUserName = '';
+    const firebaseConfig = {
+      apiKey: "AIzaSyBoOfricXTdLMs9zDiOoQifSNa3gNMZ6MM",
+      authDomain: "comments-71cb0.firebaseapp.com",
+      projectId: "comments-71cb0",
+      storageBucket: "comments-71cb0.firebasestorage.app",
+      messagingSenderId: "254323061538",
+      appId: "1:254323061538:web:3a1004d5fc9ed9a6872b7b"
+    };
 
-      function formatDate(timestamp) {
-        const date = timestamp.toDate();
-        return date.toLocaleString();
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const commentsRef = collection(db, 'comments2'); // Updated to 'comments2'
+    let currentUserName = '';
+
+    function formatDate(timestamp) {
+      const date = timestamp.toDate();
+      return date.toLocaleString();
+    }
+
+    async function deleteComment(docId) {
+      try {
+        await deleteDoc(doc(db, 'comments2', docId));
+        await loadComments();
+      } catch (error) {
+        console.error("Error deleting comment: ", error);
       }
+    }
 
-      async function deleteComment(docId) {
+    async function editComment(docId, currentText) {
+      const newText = prompt("Edit your comment:", currentText);
+      if (newText?.trim()) {
         try {
-          await deleteDoc(doc(db, 'comments', docId));
+          await updateDoc(doc(db, 'comments2', docId), {
+            text: newText,
+            timestamp: serverTimestamp()
+          });
           await loadComments();
         } catch (error) {
-          console.error("Error deleting comment: ", error);
+          console.error("Error updating comment: ", error);
         }
       }
+    }
 
-      async function editComment(docId, currentText) {
-        const newText = prompt("Edit your comment:", currentText);
-        if (newText?.trim()) {
-          try {
-            await updateDoc(doc(db, 'comments', docId), {
-              text: newText,
-              timestamp: serverTimestamp()
-            });
-            await loadComments();
-          } catch (error) {
-            console.error("Error updating comment: ", error);
-          }
-        }
-      }
+    async function hasUserCommented(userName) {
+      const q = query(commentsRef);
+      const snapshot = await getDocs(q);
+      return snapshot.docs.some(doc => doc.data().name === userName);
+    }
 
-      async function hasUserCommented(userName) {
-        const q = query(commentsRef);
-        const snapshot = await getDocs(q);
-        return snapshot.docs.some(doc => doc.data().name === userName);
-      }
+    async function loadComments() {
+      const q = query(commentsRef, orderBy('timestamp', 'desc'));
+      const snapshot = await getDocs(q);
+      const commentsList = document.getElementById('comments-list');
+      commentsList.innerHTML = '';
 
-      async function loadComments() {
-        const q = query(commentsRef, orderBy('timestamp', 'desc'));
-        const snapshot = await getDocs(q);
-        const commentsList = document.getElementById('comments-list');
-        commentsList.innerHTML = '';
+      snapshot.forEach((doc) => {
+        const comment = doc.data();
+        if (comment.timestamp) {
+          const commentDiv = document.createElement('div');
+          commentDiv.classList.add('p-4', 'bg-[#010245]', 'rounded-lg', 'border', 'border-[#3289C4]/20');
 
-        snapshot.forEach((doc) => {
-          const comment = doc.data();
-          if (comment.timestamp) {
-            const commentDiv = document.createElement('div');
-            commentDiv.classList.add('p-4', 'bg-[#010245]', 'rounded-lg', 'border', 'border-[#3289C4]/20');
+          const actionButtons = comment.name === currentUserName ? `
+          <button onclick="editComment('${doc.id}', '${comment.text.replace(/'/g, "\\'")}")" class="text-sm text-[#3289C4] hover:text-white px-3 py-1 rounded">Edit</button>
+          <button onclick="deleteComment('${doc.id}')" class="text-sm text-red-400 hover:text-red-500 px-3 py-1 rounded">Delete</button>
+        ` : '';
 
-            const actionButtons = comment.name === currentUserName ? `
-            <button onclick="editComment('${doc.id}', '${comment.text.replace(/'/g, "\\'")}')" class="text-sm text-[#3289C4] hover:text-white px-3 py-1 rounded">Edit</button>
-            <button onclick="deleteComment('${doc.id}')" class="text-sm text-red-400 hover:text-red-500 px-3 py-1 rounded">Delete</button>
-          ` : '';
-
-            commentDiv.innerHTML = `
-            <div class="flex justify-between items-center mb-2">
-              <p class="font-semibold text-[#3289C4]">${comment.name}</p>
-              <div class="flex items-center gap-2">
-                <p class="text-sm text-gray-400">${formatDate(comment.timestamp)}</p>
-                ${actionButtons}
-              </div>
+          commentDiv.innerHTML = `
+          <div class="flex justify-between items-center mb-2">
+            <p class="font-semibold text-[#3289C4]">${comment.name}</p>
+            <div class="flex items-center gap-2">
+              <p class="text-sm text-gray-400">${formatDate(comment.timestamp)}</p>
+              ${actionButtons}
             </div>
-            <p class="text-gray-300">${comment.text}</p>
-          `;
-            commentsList.appendChild(commentDiv);
-          }
-        });
+          </div>
+          <p class="text-gray-300">${comment.text}</p>
+        `;
+          commentsList.appendChild(commentDiv);
+        }
+      });
+    }
+
+    document.getElementById('submit-comment').addEventListener('click', async () => {
+      const commentText = document.getElementById('comment-text').value;
+      const nameInput = document.getElementById('commenter-name').value;
+
+      if (!commentText.trim() || !nameInput.trim()) {
+        alert('Please fill in all fields');
+        return;
       }
 
-      document.getElementById('submit-comment').addEventListener('click', async () => {
-        const commentText = document.getElementById('comment-text').value;
-        const nameInput = document.getElementById('commenter-name').value;
+      // Check localStorage for previous comments
+      const hasCommented = localStorage.getItem(`commented_${nameInput.toLowerCase()}`);
+      if (hasCommented) {
+        alert('You have already commented. Only one comment per person is allowed.');
+        return;
+      }
 
-        if (!commentText.trim() || !nameInput.trim()) {
-          alert('Please fill in all fields');
-          return;
-        }
-
-        // Check localStorage for previous comments
-        const hasCommented = localStorage.getItem(`commented_${nameInput.toLowerCase()}`);
-        if (hasCommented) {
+      try {
+        if (await hasUserCommented(nameInput)) {
           alert('You have already commented. Only one comment per person is allowed.');
           return;
         }
 
-        try {
-          if (await hasUserCommented(nameInput)) {
-            alert('You have already commented. Only one comment per person is allowed.');
-            return;
-          }
+        currentUserName = nameInput;
+        await addDoc(commentsRef, {
+          name: nameInput,
+          text: commentText,
+          timestamp: serverTimestamp()
+        });
 
-          currentUserName = nameInput;
-          await addDoc(commentsRef, {
-            name: nameInput,
-            text: commentText,
-            timestamp: serverTimestamp()
-          });
+        // Store the comment status in localStorage
+        localStorage.setItem(`commented_${nameInput.toLowerCase()}`, 'true');
 
-          // Store the comment status in localStorage
-          localStorage.setItem(`commented_${nameInput.toLowerCase()}`, 'true');
+        document.getElementById('comment-text').value = '';
+        document.getElementById('commenter-name').value = '';
+        await loadComments();
+      } catch (error) {
+        console.error("Error adding comment: ", error);
+      }
+    });
 
-          document.getElementById('comment-text').value = '';
-          document.getElementById('commenter-name').value = '';
-          await loadComments();
-        } catch (error) {
-          console.error("Error adding comment: ", error);
-        }
-      });
+    window.deleteComment = deleteComment;
+    window.editComment = editComment;
 
-      window.deleteComment = deleteComment;
-      window.editComment = editComment;
+    loadComments();
+  </script>
+</section>
 
-      loadComments();
-    </script>
-  </section>
   <!-- Similar Posts Section -->
   <section class="bg-[#010245] py-16">
     <div class="container mx-auto px-4">
