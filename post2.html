@@ -416,100 +416,100 @@
     });
   </script>
 
-<!-- Comments Section -->
-<section class="py-16 bg-[#010245]">
-  <div class="container mx-auto px-4 max-w-3xl">
-    <h2 class="text-2xl font-bold mb-8 text-[#3289C4]">Comments</h2>
+  <!-- Comments Section -->
+  <section class="py-16 bg-[#010245]">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-2xl font-bold mb-8 text-[#3289C4]">Comments</h2>
 
-    <div id="comments-list" class="space-y-4">
-      <!-- Comments will be displayed here -->
+      <div id="comments-list" class="space-y-4">
+        <!-- Comments will be displayed here -->
+      </div>
+
+      <!-- Add Comment Form -->
+      <div class="mt-6 bg-[#010245]/50 p-6 rounded-lg border border-[#3289C4]/20">
+        <h3 class="text-lg font-semibold mb-4 text-[#3289C4]">Add a Comment</h3>
+        <input type="text" id="commenter-name"
+          class="w-full p-2 mb-4 rounded-lg bg-[#010245] text-white border border-[#3289C4]/20" placeholder="Your name">
+        <textarea id="comment-text"
+          class="w-full p-2 mb-4 rounded-lg bg-[#010245] text-white border border-[#3289C4]/20" rows="4"
+          placeholder="Write your comment..."></textarea>
+        <button id="submit-comment"
+          class="w-full bg-[#3289C4] hover:bg-[#010245] text-white py-2 rounded-lg transition duration-300">Submit
+          Comment</button>
+      </div>
     </div>
 
-    <!-- Add Comment Form -->
-    <div class="mt-6 bg-[#010245]/50 p-6 rounded-lg border border-[#3289C4]/20">
-      <h3 class="text-lg font-semibold mb-4 text-[#3289C4]">Add a Comment</h3>
-      <input type="text" id="commenter-name"
-        class="w-full p-2 mb-4 rounded-lg bg-[#010245] text-white border border-[#3289C4]/20" placeholder="Your name">
-      <textarea id="comment-text"
-        class="w-full p-2 mb-4 rounded-lg bg-[#010245] text-white border border-[#3289C4]/20" rows="4"
-        placeholder="Write your comment..."></textarea>
-      <button id="submit-comment"
-        class="w-full bg-[#3289C4] hover:bg-[#010245] text-white py-2 rounded-lg transition duration-300">Submit
-        Comment</button>
-    </div>
-  </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+      import { getFirestore, collection, getDocs, addDoc, serverTimestamp, query, orderBy, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-    import { getFirestore, collection, getDocs, addDoc, serverTimestamp, query, orderBy, deleteDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyBoOfricXTdLMs9zDiOoQifSNa3gNMZ6MM",
+        authDomain: "comments-71cb0.firebaseapp.com",
+        projectId: "comments-71cb0",
+        storageBucket: "comments-71cb0.firebasestorage.app",
+        messagingSenderId: "254323061538",
+        appId: "1:254323061538:web:3a1004d5fc9ed9a6872b7b"
+      };
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyBoOfricXTdLMs9zDiOoQifSNa3gNMZ6MM",
-      authDomain: "comments-71cb0.firebaseapp.com",
-      projectId: "comments-71cb0",
-      storageBucket: "comments-71cb0.firebasestorage.app",
-      messagingSenderId: "254323061538",
-      appId: "1:254323061538:web:3a1004d5fc9ed9a6872b7b"
-    };
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const commentsRef = collection(db, 'comments2'); // Updated to 'comments2'
+      let currentUserName = '';
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const commentsRef = collection(db, 'comments2'); // Updated to 'comments2'
-    let currentUserName = '';
-
-    function formatDate(timestamp) {
-      const date = timestamp.toDate();
-      return date.toLocaleString();
-    }
-
-    async function deleteComment(docId) {
-      try {
-        await deleteDoc(doc(db, 'comments2', docId));
-        await loadComments();
-      } catch (error) {
-        console.error("Error deleting comment: ", error);
+      function formatDate(timestamp) {
+        const date = timestamp.toDate();
+        return date.toLocaleString();
       }
-    }
 
-    async function editComment(docId, currentText) {
-      const newText = prompt("Edit your comment:", currentText);
-      if (newText?.trim()) {
+      async function deleteComment(docId) {
         try {
-          await updateDoc(doc(db, 'comments2', docId), {
-            text: newText,
-            timestamp: serverTimestamp()
-          });
+          await deleteDoc(doc(db, 'comments2', docId));
           await loadComments();
         } catch (error) {
-          console.error("Error updating comment: ", error);
+          console.error("Error deleting comment: ", error);
         }
       }
-    }
 
-    async function hasUserCommented(userName) {
-      const q = query(commentsRef);
-      const snapshot = await getDocs(q);
-      return snapshot.docs.some(doc => doc.data().name === userName);
-    }
+      async function editComment(docId, currentText) {
+        const newText = prompt("Edit your comment:", currentText);
+        if (newText?.trim()) {
+          try {
+            await updateDoc(doc(db, 'comments2', docId), {
+              text: newText,
+              timestamp: serverTimestamp()
+            });
+            await loadComments();
+          } catch (error) {
+            console.error("Error updating comment: ", error);
+          }
+        }
+      }
 
-    async function loadComments() {
-      const q = query(commentsRef, orderBy('timestamp', 'desc'));
-      const snapshot = await getDocs(q);
-      const commentsList = document.getElementById('comments-list');
-      commentsList.innerHTML = '';
+      async function hasUserCommented(userName) {
+        const q = query(commentsRef);
+        const snapshot = await getDocs(q);
+        return snapshot.docs.some(doc => doc.data().name === userName);
+      }
 
-      snapshot.forEach((doc) => {
-        const comment = doc.data();
-        if (comment.timestamp) {
-          const commentDiv = document.createElement('div');
-          commentDiv.classList.add('p-4', 'bg-[#010245]', 'rounded-lg', 'border', 'border-[#3289C4]/20');
+      async function loadComments() {
+        const q = query(commentsRef, orderBy('timestamp', 'desc'));
+        const snapshot = await getDocs(q);
+        const commentsList = document.getElementById('comments-list');
+        commentsList.innerHTML = '';
 
-          const actionButtons = comment.name === currentUserName ? `
+        snapshot.forEach((doc) => {
+          const comment = doc.data();
+          if (comment.timestamp) {
+            const commentDiv = document.createElement('div');
+            commentDiv.classList.add('p-4', 'bg-[#010245]', 'rounded-lg', 'border', 'border-[#3289C4]/20');
+
+            const actionButtons = comment.name === currentUserName ? `
           <button onclick="editComment('${doc.id}', '${comment.text.replace(/'/g, "\\'")}")" class="text-sm text-[#3289C4] hover:text-white px-3 py-1 rounded">Edit</button>
           <button onclick="deleteComment('${doc.id}')" class="text-sm text-red-400 hover:text-red-500 px-3 py-1 rounded">Delete</button>
         ` : '';
 
-          commentDiv.innerHTML = `
+            commentDiv.innerHTML = `
           <div class="flex justify-between items-center mb-2">
             <p class="font-semibold text-[#3289C4]">${comment.name}</p>
             <div class="flex items-center gap-2">
@@ -519,57 +519,57 @@
           </div>
           <p class="text-gray-300">${comment.text}</p>
         `;
-          commentsList.appendChild(commentDiv);
+            commentsList.appendChild(commentDiv);
+          }
+        });
+      }
+
+      document.getElementById('submit-comment').addEventListener('click', async () => {
+        const commentText = document.getElementById('comment-text').value;
+        const nameInput = document.getElementById('commenter-name').value;
+
+        if (!commentText.trim() || !nameInput.trim()) {
+          alert('Please fill in all fields');
+          return;
         }
-      });
-    }
 
-    document.getElementById('submit-comment').addEventListener('click', async () => {
-      const commentText = document.getElementById('comment-text').value;
-      const nameInput = document.getElementById('commenter-name').value;
-
-      if (!commentText.trim() || !nameInput.trim()) {
-        alert('Please fill in all fields');
-        return;
-      }
-
-      // Check localStorage for previous comments
-      const hasCommented = localStorage.getItem(`commented_${nameInput.toLowerCase()}`);
-      if (hasCommented) {
-        alert('You have already commented. Only one comment per person is allowed.');
-        return;
-      }
-
-      try {
-        if (await hasUserCommented(nameInput)) {
+        // Check localStorage for previous comments
+        const hasCommented = localStorage.getItem(`commented_${nameInput.toLowerCase()}`);
+        if (hasCommented) {
           alert('You have already commented. Only one comment per person is allowed.');
           return;
         }
 
-        currentUserName = nameInput;
-        await addDoc(commentsRef, {
-          name: nameInput,
-          text: commentText,
-          timestamp: serverTimestamp()
-        });
+        try {
+          if (await hasUserCommented(nameInput)) {
+            alert('You have already commented. Only one comment per person is allowed.');
+            return;
+          }
 
-        // Store the comment status in localStorage
-        localStorage.setItem(`commented_${nameInput.toLowerCase()}`, 'true');
+          currentUserName = nameInput;
+          await addDoc(commentsRef, {
+            name: nameInput,
+            text: commentText,
+            timestamp: serverTimestamp()
+          });
 
-        document.getElementById('comment-text').value = '';
-        document.getElementById('commenter-name').value = '';
-        await loadComments();
-      } catch (error) {
-        console.error("Error adding comment: ", error);
-      }
-    });
+          // Store the comment status in localStorage
+          localStorage.setItem(`commented_${nameInput.toLowerCase()}`, 'true');
 
-    window.deleteComment = deleteComment;
-    window.editComment = editComment;
+          document.getElementById('comment-text').value = '';
+          document.getElementById('commenter-name').value = '';
+          await loadComments();
+        } catch (error) {
+          console.error("Error adding comment: ", error);
+        }
+      });
 
-    loadComments();
-  </script>
-</section>
+      window.deleteComment = deleteComment;
+      window.editComment = editComment;
+
+      loadComments();
+    </script>
+  </section>
 
   <!-- Similar Posts Section -->
   <section class="bg-[#010245] py-16">
@@ -585,8 +585,11 @@
                 class="w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110">
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">Through the Lens: Unveiling Gender Stereotypes in Newspapers</h3>
-              <p class="text-gray-400 mb-4">Newspaper photos often reflect gender bias, subtly shaping how we perceive men and women. Men are frequently portrayed...</p>
+              <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">Through the Lens:
+                Unveiling Gender Stereotypes in Newspapers</h3>
+              <p class="text-gray-400 mb-4"> Have you ever noticed how women are often shown in newspapers, especially
+                on the front page? How does
+                this compare to the...</p>
               <div class="flex items-center text-sm text-[#3289C4]/70">
                 <span>January 20, 2025</span>
               </div>
@@ -603,8 +606,11 @@
                 class="w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110">
             </div>
             <div class="p-6">
-              <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">From Bias to Balance:Gender in Graphic Design Career</h3>
-              <p class="text-gray-400 mb-4">Graphic design in Malawi has traditionally been a male-dominated field, like many other professions. The 2024 Maso Awards, a popular annual event in Malawi, highlighted this trend, with...
+              <h3 class="text-xl font-bold text-[#3289C4] mb-2 hover:text-white transition-colors">From Bias to
+                Balance:Gender in Graphic Design Career</h3>
+              <p class="text-gray-400 mb-4">Graphic design in Malawi has traditionally been a male-dominated field, like
+                many other professions. The 2024 Maso Awards, a popular annual event in Malawi, highlighted this trend,
+                with...
               </p>
               <div class="flex items-center text-sm text-[#3289C4]/70">
                 <span>January 18, 2025</span>
@@ -740,12 +746,12 @@
 </body>
 <script>
   // Disable right click
-  document.addEventListener('contextmenu', function(e) {
+  document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
   });
-  
+
   // Disable keyboard shortcuts that could bypass right-click protection
-  document.addEventListener('keydown', function(e) {
+  document.addEventListener('keydown', function (e) {
     if (e.ctrlKey || e.keyCode == 123) { // 123 is F12
       e.preventDefault();
     }
