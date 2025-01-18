@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphic Voices of Gender</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <!-- Add Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #3289C4;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-3px);
+      color: #3289C4;
+    }
+  </style>
+</head>
+
+<body class="bg-[#010245] text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-[#010245] shadow-md fixed top-0 w-full z-50 transition-all duration-300">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="text-xl font-bold text-white hover:scale-105 transition-transform">Graphic Voices</a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="index.html"
+          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Home</a>
+        <div class="border-r border-white/30 h-6"></div>
+        <a href="about.html"
+          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">About</a>
+        <div class="border-r border-white/30 h-6"></div>
+        <a href="blog.html"
+          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Blog</a>
+        <div class="border-r border-white/30 h-6"></div>
+        <a href="contact.html"
+          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Contact</a>
+        <div class="border-r border-white/30 h-6"></div>
+        <!-- Social Icons -->
+        <div class="flex space-x-4">
+          <a href="https://linkedin.com" target="_blank" class="social-icon text-white text-xl">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="social-icon text-white text-xl">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" class="social-icon text-white text-xl">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://medium.com" target="_blank" class="social-icon text-white text-xl">
+            <i class="fab fa-medium"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden flex items-center focus:outline-none transition-transform hover:scale-110">
+        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+
+    <div class="border-t border-white/20"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-[#010245] shadow-lg md:hidden">
+      <a href="index.html"
+        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Home</a>
+      <a href="about.html"
+        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">About</a>
+      <a href="blog.html"
+        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Blog</a>
+      <a href="contact.html"
+        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Contact</a>
+      <!-- Mobile Social Icons -->
+      <div class="flex justify-center space-x-6 py-4">
+        <a href="https://linkedin.com" target="_blank" class="social-icon text-white text-xl">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon text-white text-xl">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-icon text-white text-xl">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://medium.com" target="_blank" class="social-icon text-white text-xl">
+          <i class="fab fa-medium"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+<!-- Posts Section -->
+  <section id="posts" class="py-16 bg-gradient-to-r from-[#010245] to-[#3289C4]">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-4xl font-bold mb-8 text-white" data-aos="fade-up">Latest Posts</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Post -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="overflow-hidden">
+            <img src="post1.jpg" alt="Post 1"
+              class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
+          </div>
+          <div class="p-4">
+            <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Graphic Desin Career</span>
+            <a href="Graphic Design Careers.html">
+              <h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">From Bias to
+                Balance: Gender in Graphic Design Career</h3>
+            </a>
+            <p class="text-gray-700 mt-2">Graphic design in Malawi has traditionally been a male-dominated field, like
+              many other professions. The 2024 Maso Awards, a popular annual event in Malawi, highlighted this trend,
+              with </p>
+            <div class="mt-4 text-sm text-gray-600">
+              <span>By James Hamuzah</span>
+              <span class="mx-2">•</span>
+              <span class="post-date">
+                <script>document.write(new Date().toLocaleDateString())</script>
+              </span>
+            </div>
+            <a href="blog.html"
+              class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read
+              More</a>
+          </div>
+        </div>
+        <!-- Post -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="overflow-hidden">
+            <img src="post2.jpg" alt="Post 2"
+              class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
+          </div>
+          <div class="p-4">
+            <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Gender Equality</span>
+            <a href="blog2.html">
+              <h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">Creating
+                gender-inclusive designs</h3>
+            </a>
+            <p class="text-gray-700 mt-2">Creating gender-inclusive designs isn't as hard as it might seem. It's all
+              about being mindful and intentional. Let me share .</p>
+            <div class="mt-4 text-sm text-gray-600">
+              <span>By James Hamuzah</span>
+              <span class="mx-2">•</span>
+              <span class="post-date">
+                <script>document.write(new Date().toLocaleDateString())</script>
+              </span>
+            </div>
+            <a href="blog2.html"
+              class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read
+              More</a>
+          </div>
+        </div>
+        <!-- Post -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="overflow-hidden">
+            <img src="post3.jpg" alt="Post 3"
+              class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
+          </div>
+          <div class="p-4">
+            <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Newspapers</span>
+            <a href="blog3.html">
+              <h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">Through the Lens:
+                Unveiling Gender Bias in Newspaper Photos</h3>
+            </a>
+            <p class="text-gray-700 mt-2">Newspaper photos often reflect gender bias, subtly shaping how we perceive men
+              and women. Men are frequently portrayed </p>
+            <div class="mt-4 text-sm text-gray-600">
+              <span>By James Hamuzah</span>
+              <span class="mx-2">•</span>
+              <span class="post-date">
+                <script>document.write(new Date().toLocaleDateString())</script>
+              </span>
+            </div>
+            <a href="blog3.html"
+              class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read
+              More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#010245] text-white py-12">
+        <div class="container mx-auto px-4">
+          <div class="grid md:grid-cols-4 gap-8">
+            <div>
+              <h3 class="text-xl font-bold mb-4">Graphic Voices</h3>
+              <p class="text-gray-400">Visual Voices: Challenging Gender Stereotypes Through Art</p>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Connect</h4>
+              <ul class="space-y-2">
+                <li><a href="" class="text-gray-400 hover:text-white transition-colors">Twitter</a></li>
+                <li><a href="" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
+                <li><a href="" class="text-gray-400 hover:text-white transition-colors">Medium</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+              <form class="space-y-4">
+                <input type="email" placeholder="Enter your email"
+                  class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-teal-500 focus:outline-none">
+                <button
+                  class="w-full px-4 py-2 bg-[#3289C4] text-white rounded hover:bg-[#010245)] transition-colors">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>©
+              <script>document.write(new Date().getFullYear())</script> Graphic Voices. All rights reserved.
+            </p>
+            <p class="mt-4">
+              <a href="https://wa.me/265990705194" class="text-[#3289C4] hover:text-white transition-colors">
+                Contact the Developer <i class="fab fa-whatsapp"></i>
+              </a>
+            </p>
+          </div>
+        </div>
+      </footer>
+    
+      <script>
+        AOS.init();
+    
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+          const nav = document.querySelector('nav');
+          if (window.scrollY > 0) {
+            nav.classList.add('shadow-lg');
+          } else {
+            nav.classList.remove('shadow-lg');
+          }
+        });
+      </script>
+    
+      <style>
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+    
+          50% {
+            background-position: 100% 50%;
+          }
+    
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+    
+        .animate-gradient {
+          background-size: 200% auto;
+          animation: gradient 3s ease infinite;
+        }
+      </style>
+      <!-- Scroll to top button -->
+      <button id="scroll-to-top"
+        class="fixed bottom-4 right-4 bg-[#010245] text-white p-3 rounded-full shadow-lg hover:bg-[#3289C4] transition-colors opacity-0 invisible">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
+    
+      <script>
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+    
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+            scrollToTopBtn.classList.add('opacity-100', 'visible');
+          } else {
+            scrollToTopBtn.classList.add('opacity-0', 'invisible');
+            scrollToTopBtn.classList.remove('opacity-100', 'visible');
+          }
+        });
+    
+        scrollToTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      </script>
+    
+      <style>
+        #scroll-to-top {
+          transition: opacity 0.3s, visibility 0.3s;
+        }
+      </style>
+    
+    </body>
+    <script>
+      // Disable right click
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+      });
+      
+      // Disable keyboard shortcuts that could bypass right-click protection
+      document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey || e.keyCode == 123) { // 123 is F12
+          e.preventDefault();
+        }
+      });
+    </script>
+    
+    </html>

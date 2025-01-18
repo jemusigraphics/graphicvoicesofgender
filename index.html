@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
     .nav-link {
       position: relative;
     }
+
     .nav-link::after {
       content: '';
       position: absolute;
@@ -25,18 +27,22 @@
       background-color: #3289C4;
       transition: width 0.3s ease;
     }
+
     .nav-link:hover::after {
       width: 100%;
     }
+
     .social-icon {
       transition: all 0.3s ease;
     }
+
     .social-icon:hover {
       transform: translateY(-3px);
       color: #3289C4;
     }
   </style>
 </head>
+
 <body class="bg-[#010245] text-gray-800">
 
   <!-- Navbar -->
@@ -47,18 +53,18 @@
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center space-x-6">
-        <a href="index.html" class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Home</a>
+        <a href="index.html"
+          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Home</a>
         <div class="border-r border-white/30 h-6"></div>
-        <a href="about.html" class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">About</a>
+        <a href="about.html"
+          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">About</a>
         <div class="border-r border-white/30 h-6"></div>
-        <a href="blog.html" class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Blog</a>
+        <a href="blog.html"
+          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Blog</a>
         <div class="border-r border-white/30 h-6"></div>
-        <a href="portfolio.html" class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Portfolio</a>
+        <a href="contact.html"
+          class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Contact</a>
         <div class="border-r border-white/30 h-6"></div>
-        <a href="contact.html" class="nav-link text-white hover:text-[#3289C4] font-medium transition-all duration-300">Contact</a>
-        <div class="border-r border-white/30 h-6"></div>
-        <!-- Login Button -->
-        <a href="system/login.html" class="px-4 py-2 bg-[#3289C4] text-white rounded-lg hover:bg-[#2776A8] transition-colors">Login</a>
         <!-- Social Icons -->
         <div class="flex space-x-4">
           <a href="https://linkedin.com" target="_blank" class="social-icon text-white text-xl">
@@ -78,7 +84,8 @@
 
       <!-- Mobile Menu Button -->
       <button id="menu-btn" class="md:hidden flex items-center focus:outline-none transition-transform hover:scale-110">
-        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
       </button>
@@ -88,12 +95,14 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden bg-[#010245] shadow-lg md:hidden">
-      <a href="index.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Home</a>
-      <a href="about.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">About</a>
-      <a href="blog.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Blog</a>
-      <a href="portfolio.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Portfolio</a>
-      <a href="contact.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Contact</a>
-      <a href="system/login.html" class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Login</a>
+      <a href="index.html"
+        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Home</a>
+      <a href="about.html"
+        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">About</a>
+      <a href="blog.html"
+        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Blog</a>
+      <a href="contact.html"
+        class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Contact</a>
       <!-- Mobile Social Icons -->
       <div class="flex justify-center space-x-6 py-4">
         <a href="https://linkedin.com" target="_blank" class="social-icon text-white text-xl">
@@ -112,191 +121,251 @@
     </div>
   </nav>
 
-    <!-- Animated Equality Icons -->
-    <div class="fixed w-full h-screen pointer-events-none" style="z-index: 1;">
-      <div class="equality-icons absolute w-full h-full">
-        <i class="fas fa-venus text-white/30 absolute animate-float" style="left: 10%; top: 20%;"></i>
-        <i class="fas fa-mars text-white/30 absolute animate-float" style="left: 80%; top: 15%;"></i>
-        <i class="fas fa-transgender text-white/30 absolute animate-float" style="left: 30%; top: 70%;"></i>
-        <i class="fas fa-equals text-white/30 absolute animate-float" style="left: 70%; top: 60%;"></i>
-        <i class="fas fa-venus-mars text-white/30 absolute animate-float" style="left: 50%; top: 40%;"></i>
-      </div>
+
+  <!-- Animated Equality Icons -->
+  <div class="fixed w-full h-screen pointer-events-none" style="z-index: 1;">
+    <div class="equality-icons absolute w-full h-full">
+      <i class="fas fa-venus text-white/30 absolute animate-float" style="left: 10%; top: 20%;"></i>
+      <i class="fas fa-mars text-white/30 absolute animate-float" style="left: 80%; top: 15%;"></i>
+      <i class="fas fa-transgender text-white/30 absolute animate-float" style="left: 30%; top: 70%;"></i>
+      <i class="fas fa-equals text-white/30 absolute animate-float" style="left: 70%; top: 60%;"></i>
+      <i class="fas fa-venus-mars text-white/30 absolute animate-float" style="left: 50%; top: 40%;"></i>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section h-screen flex items-center justify-center relative pt-24 bg-cover bg-center w-full"
+    style="background-image: url('banner.jpg'); background-size: cover; background-repeat: no-repeat;">
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="container mx-auto px-4 text-center space-y-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
+      <h1
+        class="font-['League_Spartan'] text-4xl md:text-7xl font-bold text-white tracking-wider drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] transform hover:scale-105"
+        style="font-family: 'League Spartan', sans-serif;">
+        Graphic Voices <br> of Gender
+      </h1>
+      <p class="text-base md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto px-4" data-aos="fade-up"
+        data-aos-delay="200">
+        Visual Voices: Challenging Gender Stereotypes Through Art.
+      </p>
+      <a href="blog.html"
+        class="inline-block px-6 py-3 bg-[#010245] hover:bg-[#3289C4] text-white font-bold rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 mx-4"
+        data-aos="fade-up" data-aos-delay="400">
+        View Blog
+      </a>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section h-screen flex items-center justify-center relative pt-24 bg-cover bg-center w-full" style="background-image: url('hero.jpg'); background-size: cover; background-repeat: no-repeat;">
-      <div class="absolute inset-0 bg-black/50"></div>
-      <div class="container mx-auto px-4 text-center space-y-6 relative z-10" data-aos="fade-up" data-aos-duration="1000">
-      <h1 class="font-['League_Spartan'] text-4xl md:text-7xl font-bold text-white tracking-wider drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] transform hover:scale-105" style="font-family: 'League Spartan', sans-serif;">
-      Graphic Voices <br> of Gender
-      </h1>
-      <p class="text-base md:text-2xl text-gray-100 font-medium max-w-3xl mx-auto px-4" data-aos="fade-up" data-aos-delay="200">
-      Where Creativity Meets Advocacy: Exploring Design's Role in Gender Equality.
-      </p>
-      <a href="blog.html" class="inline-block px-6 py-3 bg-[#010245] hover:bg-[#3289C4] text-white font-bold rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 mx-4" data-aos="fade-up" data-aos-delay="400">
-      View Blog
-      </a>
-      </div>
+    <style>
+      @keyframes float {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
 
-      <style>
-        @keyframes float {
-          0% { transform: translate(0, 0) rotate(0deg); }
-          50% { transform: translate(10px, -10px) rotate(5deg); }
-          100% { transform: translate(0, 0) rotate(0deg); }
+        50% {
+          transform: translate(10px, -10px) rotate(5deg);
         }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-          font-size: 2rem;
-          opacity: 0.3;
-        }
-        .equality-icons i:nth-child(2n) {
-          animation-delay: 2s;
-        }
-        .equality-icons i:nth-child(3n) {
-          animation-delay: 4s;
-        }
-      </style>
 
-      <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
-      
-      <!-- Original JavaScript remains unchanged -->
-      <script>
-        var TxtType = function(el, toRotate, period) {
-          // ... (keep existing typing animation code)
-        };
-        // ... (keep rest of the original script)
-      </script>
-    </section>
-    <!-- Posts Section -->
-    <section id="posts" class="py-16 bg-gradient-to-r from-[#010245] to-[#3289C4]">
-      <div class="container mx-auto text-center px-4">
+        100% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+        font-size: 2rem;
+        opacity: 0.3;
+      }
+
+      .equality-icons i:nth-child(2n) {
+        animation-delay: 2s;
+      }
+
+      .equality-icons i:nth-child(3n) {
+        animation-delay: 4s;
+      }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Original JavaScript remains unchanged -->
+    <script>
+      var TxtType = function (el, toRotate, period) {
+        // ... (keep existing typing animation code)
+      };
+      // ... (keep rest of the original script)
+    </script>
+  </section>
+  <!-- Posts Section -->
+  <section id="posts" class="py-16 bg-gradient-to-r from-[#010245] to-[#3289C4]">
+    <div class="container mx-auto text-center px-4">
       <h2 class="text-4xl font-bold mb-8 text-white" data-aos="fade-up">Latest Posts</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <!-- Post -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="100">
-        <div class="overflow-hidden">
-          <img src="post1.jpg" alt="Post 1" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
-        </div>
-        <div class="p-4">
-          <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Graphic Desin Career</span>
-          <a href="Graphic Design Careers.html"><h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">From Bias to Balance: Gender in Graphic Design Career</h3></a>
-          <p class="text-gray-700 mt-2">Graphic design in Malawi has traditionally been a male-dominated field, like many other professions. The 2024 Maso Awards, a popular annual event in Malawi, highlighted this trend, with </p>
-          <div class="mt-4 text-sm text-gray-600">
-          <span>By James Hamuzah</span>
-          <span class="mx-2">•</span>
-          <span class="post-date"><script>document.write(new Date().toLocaleDateString())</script></span>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
+          data-aos="fade-up" data-aos-delay="100">
+          <div class="overflow-hidden">
+            <img src="post1.jpg" alt="Post 1"
+              class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
           </div>
-          <a href="blog.html" class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read More</a>
-        </div>
+          <div class="p-4">
+            <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Graphic Desin Career</span>
+            <a href="Graphic Design Careers.html">
+              <h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">From Bias to
+                Balance: Gender in Graphic Design Career</h3>
+            </a>
+            <p class="text-gray-700 mt-2">Graphic design in Malawi has traditionally been a male-dominated field, like
+              many other professions. The 2024 Maso Awards, a popular annual event in Malawi, highlighted this trend,
+              with </p>
+            <div class="mt-4 text-sm text-gray-600">
+              <span>By James Hamuzah</span>
+              <span class="mx-2">•</span>
+              <span class="post-date">
+                <script>document.write(new Date().toLocaleDateString())</script>
+              </span>
+            </div>
+            <a href="blog.html"
+              class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read
+              More</a>
+          </div>
         </div>
         <!-- Post -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="200">
-        <div class="overflow-hidden">
-          <img src="post2.jpg" alt="Post 2" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
-        </div>
-        <div class="p-4">
-          <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Gender Equality</span>
-          <a href="blog2.html"><h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">Creating gender-inclusive designs</h3></a>
-          <p class="text-gray-700 mt-2">Creating gender-inclusive designs isn't as hard as it might seem. It's all about being mindful and intentional. Let me share .</p>
-          <div class="mt-4 text-sm text-gray-600">
-          <span>By James Hamuzah</span>
-          <span class="mx-2">•</span>
-          <span class="post-date"><script>document.write(new Date().toLocaleDateString())</script></span>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="overflow-hidden">
+            <img src="post2.jpg" alt="Post 2"
+              class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
           </div>
-          <a href="blog2.html" class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read More</a>
-        </div>
+          <div class="p-4">
+            <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Gender Equality</span>
+            <a href="blog2.html">
+              <h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">Creating
+                gender-inclusive designs</h3>
+            </a>
+            <p class="text-gray-700 mt-2">Creating gender-inclusive designs isn't as hard as it might seem. It's all
+              about being mindful and intentional. Let me share .</p>
+            <div class="mt-4 text-sm text-gray-600">
+              <span>By James Hamuzah</span>
+              <span class="mx-2">•</span>
+              <span class="post-date">
+                <script>document.write(new Date().toLocaleDateString())</script>
+              </span>
+            </div>
+            <a href="blog2.html"
+              class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read
+              More</a>
+          </div>
         </div>
         <!-- Post -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105" data-aos="fade-up" data-aos-delay="300">
-        <div class="overflow-hidden">
-          <img src="post3.jpg" alt="Post 3" class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
-        </div>
-        <div class="p-4">
-          <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Newspapers</span>
-          <a href="blog3.html"><h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">Through the Lens: Unveiling Gender Bias in Newspaper Photos</h3></a>
-          <p class="text-gray-700 mt-2">Newspaper photos often reflect gender bias, subtly shaping how we perceive men and women. Men are frequently portrayed </p>
-          <div class="mt-4 text-sm text-gray-600">
-          <span>By James Hamuzah</span>
-          <span class="mx-2">•</span>
-          <span class="post-date"><script>document.write(new Date().toLocaleDateString())</script></span>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-105"
+          data-aos="fade-up" data-aos-delay="300">
+          <div class="overflow-hidden">
+            <img src="post3.jpg" alt="Post 3"
+              class="w-full h-48 object-cover transition-transform duration-500 hover:scale-125">
           </div>
-          <a href="blog3.html" class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read More</a>
-        </div>
-        </div>
+          <div class="p-4">
+            <span class="text-sm text-[#3289C4]">Graphic Voices of Gender/Newspapers</span>
+            <a href="blog3.html">
+              <h3 class="text-lg font-bold text-[#010245] mt-2 hover:text-[#3289C4] transition-colors">Through the Lens:
+                Unveiling Gender Bias in Newspaper Photos</h3>
+            </a>
+            <p class="text-gray-700 mt-2">Newspaper photos often reflect gender bias, subtly shaping how we perceive men
+              and women. Men are frequently portrayed </p>
+            <div class="mt-4 text-sm text-gray-600">
+              <span>By James Hamuzah</span>
+              <span class="mx-2">•</span>
+              <span class="post-date">
+                <script>document.write(new Date().toLocaleDateString())</script>
+              </span>
             </div>
-            </div>
-          </section>
+            <a href="blog3.html"
+              class="inline-block mt-4 px-4 py-2 bg-[#010245] text-white rounded hover:bg-[#3289C4] transition-colors">Read
+              More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- Contact Section -->
   <section id="contact" class="py-16 bg-cover bg-center bg-fixed" style="background-image: url('get_in_touch.jpg');">
     <div class="bg-[#010245] bg-opacity-90 py-16 backdrop-blur-sm">
       <div class="container mx-auto text-center text-white px-4">
         <h2 class="text-4xl md:text-4xl text-3xl font-bold mb-8 text-[#3289C4]" data-aos="fade-up">Get in Touch</h2>
-        <p class="text-base md:text-lg mb-8 max-w-2xl mx-auto px-4" data-aos="fade-up" data-aos-delay="100">I'd love to hear from you! Whether you have a project idea, a collaboration opportunity, or just want to discuss design and gender advocacy, let's connect.</p>
+        <p class="text-base md:text-lg mb-8 max-w-2xl mx-auto px-4" data-aos="fade-up" data-aos-delay="100">I'd love to
+          hear from you! Whether you have a project idea, a collaboration opportunity, or just want to discuss design
+          and gender advocacy, let's connect.</p>
         <div class="max-w-lg mx-auto px-4" data-aos="fade-up" data-aos-delay="200">
-          <a href="mailto:james@graphicvoicesofgender.blog" class="block w-full md:w-auto px-6 py-3 bg-[#3289C4] text-white rounded-lg transition-all duration-300 hover:bg-[#010245] hover:scale-105 hover:-translate-y-1 text-sm md:text-base break-all md:break-normal">Email Me: james@graphicvoicesofgender.blog</a>
+          <a href="mailto:james@graphicvoicesofgender.blog"
+            class="block w-full md:w-auto px-6 py-3 bg-[#3289C4] text-white rounded-lg transition-all duration-300 hover:bg-[#010245] hover:scale-105 hover:-translate-y-1 text-sm md:text-base break-all md:break-normal">Email
+            Me: james@graphicvoicesofgender.blog</a>
         </div>
       </div>
     </div>
-<!-- Sliding Pop-up Message -->
-<div id="popup-message" class="fixed bottom-0 right-0 transform translate-x-full transition-transform duration-500 z-50">
-  <div class="bg-white p-8 m-4 rounded-lg shadow-xl max-w-md">
-    <div class="text-center">
-      <h3 class="text-xl font-bold text-[#3289C4] mb-4">Let's Connect!</h3>
-      <p class="text-gray-700 mb-6">I'd love to hear from you! Whether you have a project idea, a collaboration opportunity, or just want to discuss design and gender advocacy, let's connect.</p>
-      <a href="https://wa.me/+265990705194" class="block mb-4 px-6 py-3 bg-[#3289C4] text-white rounded-lg transition-all duration-300 hover:bg-[#010245]">Message on WhatsApp</a>
-      <button onclick="closePopup()" class="px-6 py-3 bg-[#010245] text-white rounded-lg transition-all duration-300 hover:bg-[#3289C4]">Close</button>
+    <!-- Sliding Pop-up Message -->
+    <div id="popup-message"
+      class="fixed bottom-0 right-0 transform translate-x-full transition-transform duration-500 z-50">
+      <div class="bg-white p-8 m-4 rounded-lg shadow-xl max-w-md">
+        <div class="text-center">
+          <h3 class="text-xl font-bold text-[#3289C4] mb-4">Let's Connect!</h3>
+          <p class="text-gray-700 mb-6">I'd love to hear from you! Whether you have a project idea or just want to discuss graphic design and gender advocacy, let's connect.</p>
+          <a href="https://wa.me/+265990705194"
+            class="block mb-4 px-6 py-3 bg-[#3289C4] text-white rounded-lg transition-all duration-300 hover:bg-[#010245]">Message
+            on WhatsApp</a>
+          <button onclick="closePopup()"
+            class="px-6 py-3 bg-[#010245] text-white rounded-lg transition-all duration-300 hover:bg-[#3289C4]">Close</button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<script>
-  // Show popup immediately when page loads
-  window.addEventListener('DOMContentLoaded', () => {
-    const popup = document.getElementById('popup-message');
-    popup.classList.remove('translate-x-full');
-  });
+    <script>
+      // Show popup immediately when page loads
+      window.addEventListener('DOMContentLoaded', () => {
+        const popup = document.getElementById('popup-message');
+        popup.classList.remove('translate-x-full');
+      });
 
-  function closePopup() {
-    const popup = document.getElementById('popup-message');
-    popup.classList.add('translate-x-full');
-  }
-</script>
-  </section>  
+      function closePopup() {
+        const popup = document.getElementById('popup-message');
+        popup.classList.add('translate-x-full');
+      }
+    </script>
+  </section>
   <!-- Footer -->
   <footer class="bg-[#010245] text-white py-12">
     <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-8">
         <div>
           <h3 class="text-xl font-bold mb-4">Graphic Voices</h3>
-          <p class="text-gray-400">Exploring Design's Role in Gender Equity</p>
+          <p class="text-gray-400">Visual Voices: Challenging Gender Stereotypes Through Art</p>
         </div>
         <div>
           <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
           <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+            <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About</a></li>
             <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-            <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Portfolio</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-lg font-semibold mb-4">Connect</h4>
           <ul class="space-y-2">
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a></li>
+            <li><a href="" class="text-gray-400 hover:text-white transition-colors">Twitter</a></li>
+            <li><a href="" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
+            <li><a href="" class="text-gray-400 hover:text-white transition-colors">Medium</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
           <form class="space-y-4">
-            <input type="email" placeholder="Enter your email" class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-teal-500 focus:outline-none">
-            <button class="w-full px-4 py-2 bg-[#3289C4] text-white rounded hover:bg-[#010245)] transition-colors">Subscribe</button>
+            <input type="email" placeholder="Enter your email"
+              class="w-full p-2 rounded bg-gray-800 text-white border border-gray-700 focus:border-teal-500 focus:outline-none">
+            <button
+              class="w-full px-4 py-2 bg-[#3289C4] text-white rounded hover:bg-[#010245)] transition-colors">Subscribe</button>
           </form>
         </div>
       </div>
       <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-        <p>© <script>document.write(new Date().getFullYear())</script> Graphic Voices. All rights reserved.</p>
+        <p>©
+          <script>document.write(new Date().getFullYear())</script> Graphic Voices. All rights reserved.
+        </p>
         <p class="mt-4">
           <a href="https://wa.me/265990705194" class="text-[#3289C4] hover:text-white transition-colors">
             Contact the Developer <i class="fab fa-whatsapp"></i>
@@ -308,7 +377,7 @@
 
   <script>
     AOS.init();
-    
+
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
@@ -326,27 +395,36 @@
 
   <style>
     @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
-    
+
     .animate-gradient {
       background-size: 200% auto;
       animation: gradient 3s ease infinite;
     }
   </style>
   <!-- Scroll to top button -->
-  <button id="scroll-to-top" class="fixed bottom-4 right-4 bg-[#010245] text-white p-3 rounded-full shadow-lg hover:bg-[#3289C4] transition-colors opacity-0 invisible">
+  <button id="scroll-to-top"
+    class="fixed bottom-4 right-4 bg-[#010245] text-white p-3 rounded-full shadow-lg hover:bg-[#3289C4] transition-colors opacity-0 invisible">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
     </svg>
   </button>
-  
+
   <script>
     // Scroll to top functionality
     const scrollToTopBtn = document.getElementById('scroll-to-top');
-    
+
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
         scrollToTopBtn.classList.remove('opacity-0', 'invisible');
@@ -356,7 +434,7 @@
         scrollToTopBtn.classList.remove('opacity-100', 'visible');
       }
     });
-  
+
     scrollToTopBtn.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
@@ -364,12 +442,26 @@
       });
     });
   </script>
-  
+
   <style>
     #scroll-to-top {
       transition: opacity 0.3s, visibility 0.3s;
     }
   </style>
-  
+
 </body>
+<script>
+  // Disable right click
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+  
+  // Disable keyboard shortcuts that could bypass right-click protection
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey || e.keyCode == 123) { // 123 is F12
+      e.preventDefault();
+    }
+  });
+</script>
+
 </html>
