@@ -131,88 +131,43 @@
       <i class="fas fa-venus-mars text-white/30 absolute animate-float" style="left: 50%; top: 40%;"></i>
     </div>
   </div>
-
   <!-- About Section -->
-  <section class="min-h-screen bg-[#010245] text-white py-20 relative overflow-hidden">
-    <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
-      <!-- Image Container -->
-      <div class="lg:w-1/2 relative">
-        <div class="rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-500 shadow-2xl">
-          <img src="Profile.jpg" alt="James Hamuza" class="w-full h-auto object-cover animate-fadeIn">
-        </div>
+  <section class="container mx-auto px-4 py-20 mt-16">
+    <h2 class="text-4xl font-bold text-white text-center mb-12" data-aos="fade-up">
+      Who's Behind Graphic Voices?
+    </h2>
+
+    <div class="flex flex-col md:flex-row items-center gap-12 mt-8">
+      <div class="md:w-1/2" data-aos="fade-right">
+        <img src="Profile.jpg" alt="Profile"
+          class="rounded-2xl shadow-2xl hover:scale-105 transition-transform duration-300 w-full max-w-md mx-auto">
       </div>
 
-      <!-- Text Content -->
-      <div class="lg:w-1/2 space-y-6 animate-slideInRight">
-        <h1 class="text-4xl md:text-5xl font-bold text-white">
-          James Hamuza
-        </h1>
-        <h2 class="text-xl text-[#3289C4] font-semibold">Gender Activist and Graphic Designer</h2>
-
-        <div class="space-y-4 text-lg leading-relaxed">
-          <p class="animate-fadeIn">
-            James is a passionate gender activist and a skilled graphic designer, committed to using creativity and
-            education to drive social change.
+      <div class="md:w-1/2" data-aos="fade-left">
+        <div class="bg-[#020366]/30 p-8 rounded-xl backdrop-blur-sm">
+          <h3 class="text-3xl font-bold text-[#3289C4] mb-4">James Hamuza</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+          <p class="text-gray-300 text-lg leading-relaxed">
+            As a passionate graphic designer and gender equality advocate, I created Graphic Voices to challenge
+            stereotypes through visual storytelling. With over 7 years of experience in digital art, I believe in the
+            power of design to create meaningful social change.
+          </p>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            In addition to my work in design, I am a tutor at the University of Malawi under the Sociology and Population
+            Studies Department. Through this platform, I aim to inspire conversations about gender representation in
+            media and create artwork that celebrates diversity and inclusivity.
           </p>
 
-          <p class="animate-fadeIn delay-100">
-            He also serves as a tutor in the Department of Sociology and Population Studies at the University of Malawi,
-            where he engages students in critical discussions on gender and societal issues.
-          </p>
-
-          <p class="animate-fadeIn delay-200">
-            Through his work, James actively challenges gender stereotypes, promoting inclusion and equality in
-            innovative and impactful ways.
-          </p>
+          <div class="mt-8 flex gap-4">
+            <a href="portfolio.html"
+              class="border border-[#3289C4] text-white px-6 py-3 rounded-lg hover:bg-[#3289C4]/20 transition-colors inline-block">
+              View Portfolio
+            </a>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- Decorative Elements -->
-    <div class="absolute -bottom-20 -left-20 w-40 h-40 bg-[#3289C4]/20 rounded-full blur-3xl"></div>
-    <div class="absolute top-20 -right-20 w-60 h-60 bg-[#3289C4]/10 rounded-full blur-3xl"></div>
   </section>
-
-  <style>
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideInRight {
-      from {
-        transform: translateX(100px);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    .animate-fadeIn {
-      animation: fadeIn 1s ease-out forwards;
-    }
-
-    .animate-slideInRight {
-      animation: slideInRight 1s ease-out forwards;
-    }
-
-    .delay-100 {
-      animation-delay: 0.1s;
-    }
-
-    .delay-200 {
-      animation-delay: 0.2s;
-    }
-  </style>
-
   <!-- Footer -->
   <footer class="bg-[#010245] text-white py-12">
     <div class="container mx-auto px-4">
@@ -337,12 +292,12 @@
 </body>
 <script>
   // Disable right click
-  document.addEventListener('contextmenu', function(e) {
+  document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
   });
-  
+
   // Disable keyboard shortcuts that could bypass right-click protection
-  document.addEventListener('keydown', function(e) {
+  document.addEventListener('keydown', function (e) {
     if (e.ctrlKey || e.keyCode == 123) { // 123 is F12
       e.preventDefault();
     }

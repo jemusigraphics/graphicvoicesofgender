@@ -101,7 +101,7 @@
         class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">About</a>
       <a href="blog.html"
         class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Blog</a>
-      <a href="#contact.html"
+      <a href="contact.html"
         class="block px-4 py-2 text-white hover:bg-[#3289C4] transition-all duration-300 border-b border-white/20">Contact</a>
       <!-- Mobile Social Icons -->
       <div class="flex justify-center space-x-6 py-4">
@@ -152,16 +152,29 @@
     </div>
   </section>
   <!-- Animated Quote Section -->
-  <section class="bg-[#010245] py-16 px-4">
-    <div class="max-w-3xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
-      <div class="relative">
-        <i class="fas fa-quote-left text-4xl text-[#3289C4] absolute -top-4 -left-4"></i>
-        <blockquote class="text-white text-2xl font-light italic leading-relaxed">
-          It is not enough to be busy; so are the ants. The question is: What are we busy about?
-        </blockquote>
-        <i class="fas fa-quote-right text-4xl text-[#3289C4] absolute -bottom-4 -right-4"></i>
+  <section class="bg-[#010245] py-20 px-4 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto text-center" data-aos="fade-up" data-aos-duration="1200">
+      <!-- Background decorative elements -->
+      <div class="absolute inset-0 opacity-5">
+        <i class="fas fa-quote-left text-8xl text-[#3289C4] transform -rotate-12 absolute top-8 left-8"></i>
+        <i class="fas fa-quote-right text-8xl text-[#3289C4] transform rotate-12 absolute bottom-8 right-8"></i>
       </div>
-      <p class="text-[#3289C4] mt-6 font-semibold">― Henry David Thoreau</p>
+      
+      <!-- Quote container with glass effect -->
+      <div class="relative backdrop-blur-sm bg-white/5 rounded-xl p-12 shadow-xl">
+        <i class="fas fa-quote-left text-5xl text-[#3289C4] absolute -top-6 -left-6 transform hover:scale-110 transition-transform"></i>
+        <blockquote class="text-white text-3xl font-light italic leading-relaxed mb-8 hover:text-[#3289C4] transition-colors duration-300">
+          "It is not enough to be busy; so are the ants. The question is: What are we busy about?"
+        </blockquote>
+        <i class="fas fa-quote-right text-5xl text-[#3289C4] absolute -bottom-6 -right-6 transform hover:scale-110 transition-transform"></i>
+        
+        <!-- Author with animation -->
+        <div class="mt-8" data-aos="fade-up" data-aos-delay="300">
+          <p class="text-[#3289C4] text-xl font-semibold hover:text-white transition-colors duration-300">
+            ― Henry David Thoreau
+          </p>
+        </div>
+      </div>
     </div>
   </section>
   <!-- Footer -->
