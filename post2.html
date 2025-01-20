@@ -221,22 +221,8 @@
               <button
                 class="flex justify-between items-center w-full p-4 text-left bg-[#010245] text-white hover:bg-[#3289C4]/20">
                 <span class="flex items-center">
-                  <i class="fas fa-users mr-3"></i>
-                  2. Show All Kinds of People
-                </span>
-                <i class="fas fa-chevron-down transition-transform"></i>
-              </button>
-              <div class="accordion-content hidden p-4 bg-[#010245]/50 text-gray-300">
-                Include men, women, and non-binary characters of different shapes, sizes, and backgrounds in your work.
-              </div>
-            </div>
-
-            <div class="accordion-item border-t border-[#3289C4]/20">
-              <button
-                class="flex justify-between items-center w-full p-4 text-left bg-[#010245] text-white hover:bg-[#3289C4]/20">
-                <span class="flex items-center">
                   <i class="fas fa-random mr-3"></i>
-                  3. Break Stereotypes
+                  2. Break Stereotypes
                 </span>
                 <i class="fas fa-chevron-down transition-transform"></i>
               </button>
@@ -251,7 +237,7 @@
                 class="flex justify-between items-center w-full p-4 text-left bg-[#010245] text-white hover:bg-[#3289C4]/20">
                 <span class="flex items-center">
                   <i class="fas fa-palette mr-3"></i>
-                  4. Use Neutral Colors and Symbols
+                  3. Use Neutral Colors and Symbols
                 </span>
                 <i class="fas fa-chevron-down transition-transform"></i>
               </button>
@@ -266,7 +252,7 @@
                 class="flex justify-between items-center w-full p-4 text-left bg-[#010245] text-white hover:bg-[#3289C4]/20">
                 <span class="flex items-center">
                   <i class="fas fa-star mr-3"></i>
-                  5. Create Empowering Stories
+                  4. Create Empowering Stories
                 </span>
                 <i class="fas fa-chevron-down transition-transform"></i>
               </button>
@@ -280,7 +266,7 @@
                 class="flex justify-between items-center w-full p-4 text-left bg-[#010245] text-white hover:bg-[#3289C4]/20">
                 <span class="flex items-center">
                   <i class="fas fa-comments mr-3"></i>
-                  6. Ask for Feedback
+                  5. Ask for Feedback
                 </span>
                 <i class="fas fa-chevron-down transition-transform"></i>
               </button>
@@ -295,7 +281,7 @@
                 class="flex justify-between items-center w-full p-4 text-left bg-[#010245] text-white hover:bg-[#3289C4]/20">
                 <span class="flex items-center">
                   <i class="fas fa-heart mr-3"></i>
-                  7. Avoid Objectification
+                  6. Avoid Objectification
                 </span>
                 <i class="fas fa-chevron-down transition-transform"></i>
               </button>
@@ -309,7 +295,7 @@
                 class="flex justify-between items-center w-full p-4 text-left bg-[#010245] text-white hover:bg-[#3289C4]/20">
                 <span class="flex items-center">
                   <i class="fas fa-laugh mr-3"></i>
-                  8. Be Careful with Humor
+                  7. Be Careful with Humor
                 </span>
                 <i class="fas fa-chevron-down transition-transform"></i>
               </button>
@@ -319,12 +305,12 @@
               </div>
             </div>
 
-            <div class="accordion-item border-t border-[#3289C4]/20">
+            <div class="accordion-item border-t border-[#3289C4]/20"></div>
               <button
                 class="flex justify-between items-center w-full p-4 text-left bg-[#010245] text-white hover:bg-[#3289C4]/20">
                 <span class="flex items-center">
                   <i class="fas fa-bullhorn mr-3"></i>
-                  9. Spread Awareness
+                  8. Spread Awareness
                 </span>
                 <i class="fas fa-chevron-down transition-transform"></i>
               </button>
@@ -339,7 +325,7 @@
                 class="flex justify-between items-center w-full p-4 text-left bg-[#010245] text-white hover:bg-[#3289C4]/20">
                 <span class="flex items-center">
                   <i class="fas fa-hands-helping mr-3"></i>
-                  10. Encourage Change
+                  9. Encourage Change
                 </span>
                 <i class="fas fa-chevron-down transition-transform"></i>
               </button>
@@ -423,9 +409,12 @@
     <div class="flex justify-between items-center mb-8">
       <h2 class="text-2xl font-bold text-[#3289C4]">Comments</h2>
       <div id="auth-container">
-        <button id="login-btn" class="bg-[#3289C4] text-white px-4 py-2 rounded-lg hover:bg-[#2778B3] hidden">
-          Sign in with Google
-        </button>
+        <div id="login-message" class="text-center"> <!-- Login message container -->
+          <p class="text-white mb-4">Sign in to comment</p>
+          <button id="login-btn" class="bg-[#3289C4] text-white px-6 py-2 rounded-lg hover:bg-[#2778B3] hidden">
+            <i class="fab fa-google mr-2"></i>Sign in 
+          </button>
+        </div>
         <div id="user-info" class="hidden">
           <span id="user-name" class="text-white mr-4"></span>
           <button id="logout-btn" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
@@ -435,7 +424,6 @@
       </div>
     </div>
 
-    <!-- Loading Indicator -->
     <div id="loading" class="hidden">
       <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#3289C4] mx-auto"></div>
     </div>
@@ -473,7 +461,7 @@
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getFirestore, collection, query, orderBy, onSnapshot, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+  import { getFirestore, collection, query, where, orderBy, onSnapshot, addDoc, serverTimestamp, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
   import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
   const firebaseConfig = {
@@ -497,22 +485,32 @@
   const commentForm = document.getElementById('comment-form');
   const commentText = document.getElementById('comment-text');
   const submitComment = document.getElementById('submit-comment');
-  const commentsList = document.getElementById('comments-list');
   const publicComments = document.getElementById('public-comments');
   const loading = document.getElementById('loading');
   const feedback = document.getElementById('feedback');
+  const loginMessage = document.getElementById('login-message');
 
-  // Initialize comments loading
   loading.classList.remove('hidden');
 
-  onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, async (user) => {
     if (user) {
       loginBtn.classList.add('hidden');
+      loginMessage.classList.add('hidden');
       userInfo.classList.remove('hidden');
-      commentForm.classList.remove('hidden');
       userName.textContent = user.displayName;
+      
+      // Check if user has already commented
+      const userCommentQuery = query(commentsRef, where("authorId", "==", user.uid));
+      const querySnapshot = await getDocs(userCommentQuery);
+      
+      if (querySnapshot.empty) {
+        commentForm.classList.remove('hidden');
+      } else {
+        showFeedback('You have already submitted a comment', 'info');
+      }
     } else {
       loginBtn.classList.remove('hidden');
+      loginMessage.classList.remove('hidden');
       userInfo.classList.add('hidden');
       commentForm.classList.add('hidden');
     }
@@ -537,7 +535,6 @@
     }
   });
 
-  // Submit comment functionality
   submitComment.addEventListener('click', async () => {
     if (!auth.currentUser) {
       showFeedback('Please sign in to comment', 'error');
@@ -552,6 +549,15 @@
 
     loading.classList.remove('hidden');
     try {
+      // Check again if user has already commented
+      const userCommentQuery = query(commentsRef, where("authorId", "==", auth.currentUser.uid));
+      const querySnapshot = await getDocs(userCommentQuery);
+      
+      if (!querySnapshot.empty) {
+        showFeedback('You have already submitted a comment', 'error');
+        return;
+      }
+
       await addDoc(commentsRef, {
         text: text,
         authorName: auth.currentUser.displayName,
@@ -559,6 +565,7 @@
         timestamp: serverTimestamp()
       });
       commentText.value = '';
+      commentForm.classList.add('hidden');
       showFeedback('Comment added successfully!', 'success');
     } catch (error) {
       showFeedback('Error adding comment: ' + error.message, 'error');
@@ -567,7 +574,6 @@
     }
   });
 
-  // Listen for comments updates
   const publicQuery = query(commentsRef, orderBy('timestamp', 'desc'));
   onSnapshot(publicQuery, (snapshot) => {
     loading.classList.add('hidden');
@@ -589,9 +595,6 @@
       `;
       publicComments.appendChild(commentEl);
     });
-  }, (error) => {
-    loading.classList.add('hidden');
-    showFeedback('Error loading comments: ' + error.message, 'error');
   });
 
   function formatDate(timestamp) {
@@ -602,12 +605,13 @@
     feedback.classList.remove('hidden');
     feedback.querySelector('p').textContent = message;
     feedback.querySelector('p').className = `text-center py-2 rounded-lg ${
-      type === 'success' ? 'bg-green-500' : 'bg-red-500'
+      type === 'success' ? 'bg-green-500' : 
+      type === 'error' ? 'bg-red-500' : 
+      'bg-blue-500'
     } text-white`;
     setTimeout(() => feedback.classList.add('hidden'), 3000);
   }
 </script>
-</section>
 
   <!-- Similar Posts Section -->
   <section class="bg-[#010245] py-16">
